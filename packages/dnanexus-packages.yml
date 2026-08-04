@@ -1,0 +1,107 @@
+generated: '2026-08-04'
+method: searched
+source: https://documentation.dnanexus.com/developer/client-libraries
+docs: https://documentation.dnanexus.com/downloads
+autodoc: http://autodoc.dnanexus.com/
+packages:
+- language: python
+  registry: pypi
+  name: dxpy
+  version_seen: 0.412.0
+  url: https://pypi.org/project/dxpy/
+  install: python3 -m pip install dxpy
+  source: https://github.com/dnanexus/dx-toolkit
+  docs: http://autodoc.dnanexus.com/bindings/python/current/
+  official: true
+  note: >-
+    DNAnexus Platform API bindings for Python. Ships the dx command-line client as
+    well as dxpy.bindings (Pythonic object wrappers) and dxpy.api (low-level
+    one-function-per-API-method wrappers).
+- language: java
+  registry: maven
+  name: com.dnanexus:dxapi
+  version_seen: 0.10.0
+  url: https://central.sonatype.com/artifact/com.dnanexus/dxapi
+  install: 'maven: com.dnanexus:dxapi'
+  source: https://github.com/dnanexus/dxScala
+  docs: http://autodoc.dnanexus.com/bindings/java/current/
+  official: true
+- language: scala
+  registry: maven
+  name: com.dnanexus:dxcommon
+  version_seen: 0.8.0
+  url: https://central.sonatype.com/artifact/com.dnanexus/dxcommon
+  source: https://github.com/dnanexus/dxScala
+  official: true
+- language: scala
+  registry: maven
+  name: com.dnanexus:wdltools
+  version_seen: 0.17.1
+  url: https://central.sonatype.com/artifact/com.dnanexus/wdltools
+  source: https://github.com/dnanexus/wdlTools
+  official: true
+- language: scala
+  registry: maven
+  name: com.dnanexus:cwlscala
+  version_seen: 0.7.0
+  url: https://central.sonatype.com/artifact/com.dnanexus/cwlscala
+  source: https://github.com/dnanexus/cwlScala
+  official: true
+- language: scala
+  registry: maven
+  name: com.dnanexus:dxfileaccessprotocols
+  version_seen: 0.5.0
+  url: https://central.sonatype.com/artifact/com.dnanexus/dxfileaccessprotocols
+  official: true
+- language: scala
+  registry: maven
+  name: com.dnanexus:dxyaml
+  version_seen: 0.1.0
+  url: https://central.sonatype.com/artifact/com.dnanexus/dxyaml
+  official: true
+- language: cpp
+  registry: source
+  name: dxcpp
+  url: https://github.com/dnanexus/dx-toolkit
+  docs: http://autodoc.dnanexus.com/bindings/cpp/current/index.html
+  official: true
+  note: C++ client bindings, distributed in the dx-toolkit source tree (no package registry).
+- language: cpp
+  registry: source
+  name: dxjson
+  url: https://github.com/dnanexus/dx-toolkit
+  docs: http://autodoc.dnanexus.com/libraries/dxjson/current/index.html
+  official: true
+  note: JSON library used by the C++ bindings.
+- language: go
+  registry: github
+  name: dxda
+  url: https://github.com/dnanexus/dxda
+  official: true
+  note: DNAnexus Download Agent - CLI tool for bulk download of files from the platform.
+- language: go
+  registry: github
+  name: dxfuse
+  url: https://github.com/dnanexus/dxfuse
+  official: true
+  note: FUSE filesystem for the DNAnexus storage system.
+- language: scala
+  registry: github
+  name: dxCompiler
+  url: https://github.com/dnanexus/dxCompiler
+  official: true
+  note: WDL and CWL compiler that targets the DNAnexus platform.
+not_found:
+- registry: npm
+  note: no first-party DNAnexus JavaScript/TypeScript client library found
+- registry: rubygems
+  note: none found
+- registry: nuget
+  note: none found
+- registry: crates.io
+  note: none found
+- registry: packagist
+  note: none found
+x-evidence:
+  fetched: '2026-08-04'
+  registries_probed: [pypi, maven-central, npm]

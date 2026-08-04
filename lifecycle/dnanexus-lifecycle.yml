@@ -1,0 +1,67 @@
+generated: '2026-08-04'
+method: searched
+source: https://documentation.dnanexus.com/developer/api/protocols
+versioning:
+  scheme: request-header
+  header: DNAnexus-API
+  current: 1.0.0
+  default: >-
+    When the header is omitted the most recent API version applies. The header is
+    echoed back on responses.
+  docs: https://documentation.dnanexus.com/developer/api/protocols
+  release_versioning:
+    scheme: deployment-date
+    example: '_20250617'
+    note: >-
+      Platform releases are identified by deployment date so regulated customers can
+      pin an exact production release version in validation and compliance records.
+    docs: https://documentation.dnanexus.com/release-notes
+release_cadence:
+  frequency: weekly
+  day: Tuesday
+  note: Predictable cadence for security updates, reliability improvements and new
+    capabilities.
+  source: https://documentation.dnanexus.com/release-notes
+deprecation:
+  policy_url: null
+  sunset_header: false
+  deprecation_header: false
+  note: >-
+    DNAnexus publishes no standalone API deprecation policy page and does not
+    document RFC 8594 Sunset/Deprecation headers. Deprecations and removals are
+    announced inside the dated release notes - for example the 2026 notes record
+    that /project-xxxx/describe no longer returns retired instance types and that
+    creating or updating apps with retired instance types now returns a validation
+    error. The dx-toolkit CHANGELOG carries client-library deprecations.
+  announced_via:
+  - https://documentation.dnanexus.com/release-notes
+  - https://github.com/dnanexus/dx-toolkit/blob/master/CHANGELOG.md
+status_page:
+  url: https://status.dnanexus.com/
+  platform: Atlassian Statuspage
+  api: https://status.dnanexus.com/api/v2/status.json
+  page_id: 8tcbdgrvyskv
+  probed_status: 200
+sla:
+  url: null
+  published_uptime_target: null
+  durability_claim: 99.999999999% durability, 99.99% availability
+  durability_source: https://www.dnanexus.com/platform-security-compliance
+support:
+  community: https://community.dnanexus.com/s/
+  email: support@dnanexus.com
+  in_product: Help header > Contact Support
+audit_trail:
+  docs: https://documentation.dnanexus.com/admin/audit-trail
+  note: >-
+    Human- and machine-readable logs of all activity, retained to support 21 CFR
+    Part 11 (Annex 11) compliance; data logging and auditability documented at 6
+    years.
+deprecated_operations: []
+x-evidence:
+  fetched: '2026-08-04'
+  probes:
+  - url: https://status.dnanexus.com/api/v2/status.json
+    http_status: 200
+  - url: https://documentation.dnanexus.com/release-notes.md
+    http_status: 200

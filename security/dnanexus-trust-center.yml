@@ -1,0 +1,57 @@
+generated: '2026-08-04'
+method: searched
+probe: true
+source: https://trust.dnanexus.com
+url: https://trust.dnanexus.com
+platform: Whistic public security profile
+profile_url: https://public-profile.whistic.com/4d38064f-cad1-4a2d-bd3e-5db7a24ba448
+note: >-
+  trust.dnanexus.com returns a 273-byte HTML shell that iframes the Whistic-hosted
+  public security profile, so the automated keyword probe (probe-security-programs.py)
+  recorded no hit. The certifications below were read from the embedded Whistic
+  profile and from the DNAnexus platform security & compliance page.
+certifications:
+- ISO 27001
+- FedRAMP
+- GovRAMP
+- Cyber Essentials
+- Cyber Essentials Plus
+- HIPAA
+- PCI
+- EU-U.S. Data Privacy Framework
+- EcoVadis
+certifications_in_progress:
+- ISO 42001
+regulatory_claims:
+- CLIA
+- CAP
+- 21 CFR Part 11 (Annex 11)
+- 21 CFR Part 58 (GLP)
+- 21 CFR Part 493
+- GDPR / UK GDPR
+- GxP
+documents:
+- Vulnerability Disclosure Policy
+- PGP Public Key
+- Penetration Test Report (redacted, 2026)
+- FedRAMP Secure Configuration Guide
+- NIS2 Compliance Documentation
+- Supplier Code of Conduct
+- Modern Slavery Statement
+- Adverse Event Reporting
+- SSL Report
+compliance_page: https://www.dnanexus.com/platform-security-compliance
+gxp_docs: https://documentation.dnanexus.com/admin/gxp
+audit_trail_docs: https://documentation.dnanexus.com/admin/audit-trail
+evidence:
+- source: https://trust.dnanexus.com
+  http_status: 200
+  kind: trust-center shell (iframe to Whistic)
+- source: https://public-profile.whistic.com/4d38064f-cad1-4a2d-bd3e-5db7a24ba448
+  kind: whistic public security profile
+- source: https://www.dnanexus.com/platform-security-compliance
+  kind: vendor compliance page
+- source: https://documentation.dnanexus.com/faqs/legal-and-compliance.md
+  kind: documentation FAQ
+x-evidence:
+  fetched: '2026-08-04'

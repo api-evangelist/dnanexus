@@ -1,0 +1,42 @@
+generated: '2026-08-04'
+method: generated
+source: https://documentation.dnanexus.com/developer/api/api-directory
+note: >-
+  DNAnexus publishes no OpenAPI, so every step in these skills is grounded in a
+  route that appears verbatim in the provider's own Directory of API Methods (206
+  documented methods) rather than in a spec operationId. No route below was invented;
+  each was checked against the harvested directory.
+api: https://api.dnanexus.com
+skills:
+- file: dnanexus-authenticate-and-orient.md
+  name: Authenticate against the DNAnexus Platform API and orient in a project
+  api: https://api.dnanexus.com
+  operations: [/system/whoami, /system/findProjects, /project-xxxx/describe, /class-xxxx/listFolder,
+    /system/resolveDataObjects]
+- file: dnanexus-upload-a-file.md
+  name: Upload a file into a DNAnexus project safely
+  api: https://api.dnanexus.com
+  operations: [/file/new, /file-xxxx/upload, /file-xxxx/close, /file-xxxx/describe,
+    /class-xxxx/setProperties, /class-xxxx/addTags]
+- file: dnanexus-run-an-app-and-monitor.md
+  name: Run a DNAnexus app and monitor the resulting job
+  api: https://api.dnanexus.com
+  operations:
+  - /system/findApps
+  - '/app-xxxx[/yyyy]/describe'
+  - '/app-xxxx[/yyyy]/run'
+  - /job-xxxx/describe
+  - /job-xxxx/terminate
+  - /system/findExecutions
+- file: dnanexus-search-with-pagination.md
+  name: Search the DNAnexus platform and paginate the whole result set
+  api: https://api.dnanexus.com
+  operations: [/system/findDataObjects, /system/findExecutions, /system/findProjects,
+    /system/describeDataObjects, /system/resolveDataObjects, /org-xxxx/findProjects]
+- file: dnanexus-tre-data-access-request.md
+  name: Submit and review a Trusted Research Environment data access request
+  api: https://api.dnanexus.com
+  operations: [/system/findTres, /tre-xxxx/describe, /tre-xxxx/getDataTypeGroups, /treApplication/new,
+    /treApplication-xxxx/createCohortMetadata, /treApplication-xxxx/addCollaborators,
+    /treApplication-xxxx/submit, /treApplication-xxxx/describe, /treApplication-xxxx/approve,
+    /treApplication-xxxx/reject, /system/findTreApplications]

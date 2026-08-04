@@ -1,0 +1,94 @@
+generated: '2026-08-04'
+method: searched
+source: https://documentation.dnanexus.com/developer/api/protocols
+docs: https://documentation.dnanexus.com/developer/api/protocols
+format: proprietary
+rfc9457: false
+envelope:
+  shape: '{"error": {"type": "<ErrorType>", "message": "<description>", "details": <optional>}}'
+  fields:
+  - name: error.type
+    description: Machine-readable error class name.
+  - name: error.message
+    description: Human-readable description of what went wrong.
+  - name: error.details
+    description: Optional additional context.
+note: >-
+  DNAnexus does not use application/problem+json. Successful calls return HTTP 200
+  with a JSON body; failures return a non-200 status and the error envelope above.
+problems:
+- type: MalformedJSON
+  status: 400
+  title: Malformed JSON in request
+  remediation: >-
+    Send a well-formed JSON body and set Content-Type to application/json (or omit
+    it entirely). Any other Content-Type value triggers this error.
+- type: InvalidAuthentication
+  status: 401
+  title: Invalid or missing authentication
+  remediation: 'Send an Authorization: Bearer <token> header with a valid, unrevoked,
+    unexpired token.'
+  observed: 'POST https://api.dnanexus.com/system/whoami with no auth returned 401
+    {"error":{"type":"InvalidAuthentication","message":"You need to be logged in to
+    use this method"}}'
+- type: PermissionDenied
+  status: 401
+  title: Caller lacks permission for this operation
+  remediation: >-
+    Check the caller's permission level on the containing project or org
+    (VIEW / UPLOAD / CONTRIBUTE / ADMINISTER).
+- type: SpendingLimitExceeded
+  status: 403
+  title: Spending limit reached for the billing account
+  remediation: Raise the account spending limit or change the bill-to account.
+- type: OrgExpired
+  status: 403
+  title: Organization has expired and cannot perform billable operations
+  remediation: Contact DNAnexus to renew the organization.
+- type: ResourceNotFound
+  status: 404
+  title: Referenced entity does not exist or is not visible to the caller
+  remediation: Verify the entity ID and that the caller has at least VIEW on its container.
+- type: InvalidInput
+  status: 422
+  title: Input failed validation
+  remediation: >-
+    Correct the offending input field. Also returned when a request is retried with
+    a previously used `nonce` but a changed input body.
+- type: InvalidState
+  status: 422
+  title: Entity is not in a state that permits this operation
+  remediation: >-
+    Check the object/job state machine (open / closing / closed for data objects;
+    the job lifecycle for executions) before retrying.
+- type: InvalidType
+  status: 422
+  title: Entity is not of a type this method accepts
+  remediation: Call the method appropriate to the entity's class.
+- type: RateLimitConditional
+  status: 429
+  title: Rate limit exceeded
+  remediation: >-
+    Back off and retry. Documented account limit is 200 API calls/second; see
+    rate-limits/dnanexus-rate-limits.yml.
+- type: InternalError
+  status: 500
+  title: Internal server error
+  remediation: Retry; 5xx responses are documented as retryable up to some limit.
+  retryable: true
+- type: ServiceUnavailable
+  status: 503
+  title: Service temporarily unavailable
+  remediation: Retry with backoff; 5xx responses are documented as retryable.
+  retryable: true
+retry_guidance:
+  source: https://github.com/dnanexus/dx-toolkit/tree/master/src/api_wrappers#http-retry-logic
+  note: >-
+    Pair retries of creation/run methods with the `nonce` field so a retried request
+    replays the original response instead of creating a duplicate object.
+related:
+- errors/dnanexus-job-failure-reasons.yml
+x-evidence:
+  fetched: '2026-08-04'
+  url: https://documentation.dnanexus.com/developer/api/protocols.md
+  http_status: 200

@@ -1,0 +1,86 @@
+generated: '2026-08-04'
+method: searched
+source: https://documentation.dnanexus.com/release-notes
+docs: https://documentation.dnanexus.com/release-notes
+scheme: deployment-date
+current_version: '_20260804'
+note: >-
+  DNAnexus publishes release notes by deployment date. Most platform releases are
+  deployed on Tuesdays, giving a predictable weekly cadence for security updates,
+  reliability improvements and new capabilities. Release versions are identified by
+  deployment date - a release deployed on 17 June 2025 is recorded as `_20250617`
+  in validation and compliance records, so regulated customers can identify the
+  exact production release version.
+cadence: weekly (typically Tuesday)
+archives:
+- year: 2026
+  url: https://documentation.dnanexus.com/release-notes
+- year: 2025
+  url: https://documentation.dnanexus.com/release-notes/2025
+- year: 2024
+  url: https://documentation.dnanexus.com/release-notes/2024
+- year: 2023
+  url: https://documentation.dnanexus.com/release-notes/2023
+- year: 2022
+  url: https://documentation.dnanexus.com/release-notes/2022
+- year: 2021
+  url: https://documentation.dnanexus.com/release-notes/2021
+- year: 2020
+  url: https://documentation.dnanexus.com/release-notes/2020
+- year: 2019
+  url: https://documentation.dnanexus.com/release-notes/2019
+- year: 2018
+  url: https://documentation.dnanexus.com/release-notes/2018
+sdk_changelog: https://github.com/dnanexus/dx-toolkit/blob/master/CHANGELOG.md
+entries:
+- version: '_20260804'
+  date: '2026-08-04'
+  tags: [new-release, improvements, fixes]
+  highlights:
+  - Omics Data Assistant renamed to Omics Data Agent (ODA acronym unchanged).
+  - 'dx-toolkit v412.0: Nextflow workflows recover from temporary upload errors instead
+    of hanging.'
+  fixes:
+  - Cohort Browser numeric EQUALS ANY OF / NOT EQUALS filters no longer discard a value
+    unless Enter is pressed.
+  - Multi-value filter selections are readable in long lists.
+  breaking: false
+- version: '_20260728'
+  date: '2026-07-28'
+  tags: [new-release, improvements, fixes]
+  highlights:
+  - TREs can distribute file-only or tabular-only data without a Data Showcase; Data
+    Showcase and Tabular Data Inventory are now optional at TRE setup.
+  - Omics Data Catalog copies can preserve original folder structure.
+  - TRE working project and robot user protected from accidental deletion.
+  - 'dx-toolkit v411.0: support for Nextflow module binaries.'
+  fixes:
+  - Downgrading an org member from Admin to Member now correctly resets advanced permissions.
+  - Analyses no longer hang indefinitely when an input becomes inaccessible.
+  breaking: false
+- version: '_20260721'
+  date: '2026-07-21'
+  tags: [improvements, fixes]
+  highlights:
+  - Infrastructure updates to Apollo dataset ingestion.
+  - Apollo Data Model Loader handles larger, more complex CSV datasets and metadata.
+  breaking: false
+- version: '_20260714'
+  date: '2026-07-14'
+  tags: [new-release, improvements, fixes]
+  highlights:
+  - Strengthened account protections.
+  breaking: false
+- version: '_20260630'
+  date: '2026-06-30'
+  tags: [improvements, fixes]
+  breaking: false
+- version: '_20260623'
+  date: '2026-06-23'
+  tags: [improvements, fixes]
+  breaking: false
+entries_window: 6 most recent of 25 dated entries published for 2026
+x-evidence:
+  fetched: '2026-08-04'
+  url: https://documentation.dnanexus.com/release-notes.md
+  http_status: 200

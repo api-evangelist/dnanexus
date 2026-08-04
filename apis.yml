@@ -1,18 +1,92 @@
 aid: dnanexus
 name: DNAnexus
-description: 'DNAnexus is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'DNAnexus operates a cloud-based precision health data platform for genomic
+  and multi-omic research, clinical testing and biopharma R&D. The DNAnexus Platform
+  exposes a documented HTTP API of roughly 206 JSON-over-HTTPS methods at api.dnanexus.com
+  covering projects and data containers, files and other data objects, apps, applets,
+  workflows and analyses, jobs and execution containers, organizations and users, the
+  Omics Data Catalog, and Trusted Research Environments (TREs) with data access requests.
+  Every call is an HTTP POST with a JSON body, authenticated with a bearer token, versioned
+  through an optional DNAnexus-API header, and made idempotent through a documented nonce
+  field on object- and job-creation methods. First-party client libraries ship for Python
+  (dxpy), Java, Scala and C++, alongside the dx command-line client, dxfuse and dxda,
+  and the platform is an OpenID Connect provider for third-party sign-in and for job
+  identity tokens.'
 url: https://raw.githubusercontent.com/api-evangelist/dnanexus/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+x-tier: profiled
+x-tier-reason: enrichment
 specificationVersion: '0.20'
 created: '2026-08-04'
 modified: '2026-08-04'
+image: https://www.dnanexus.com/hubfs/DNAnexus/Resources/DNAnexus_logo_headers-1.png
 tags:
 - Company
-apis: []
+- Genomics
+- Bioinformatics
+- Life Sciences
+- Healthcare
+- Cloud Computing
+- Data Platform
+- Scientific Computing
+- Precision Medicine
+- Clinical Research
+apis:
+- name: DNAnexus Platform API
+  description: 'The DNAnexus Platform API is a JSON-over-HTTPS API of roughly 206 documented
+    methods. Each method is invoked with an HTTP POST to a route of the form /class-xxxx/method
+    (for example /file-xxxx/describe) or /system/method (for example /system/findDataObjects),
+    with a JSON request body and a JSON response body. Method families cover data containers
+    and projects, data objects (files, records, databases, drives, dbclusters), data-object
+    metadata, apps, applets, workflows, global workflows, jobs, analyses and execution
+    containers, search, organizations, users, OIDC clients, the Omics Data Catalog, and
+    Trusted Research Environments.'
+  humanURL: https://documentation.dnanexus.com/developer/api
+  baseURL: https://api.dnanexus.com
+  tags:
+  - Genomics
+  - Bioinformatics
+  - Data Management
+  - Workflow Orchestration
+  - Cloud Storage
+  properties:
+  - type: Documentation
+    url: https://documentation.dnanexus.com/developer/api
+  - type: APIReference
+    url: https://documentation.dnanexus.com/developer/api/api-directory
+  - type: Authentication
+    url: authentication/dnanexus-authentication.yml
+  - type: RateLimits
+    url: rate-limits/dnanexus-rate-limits.yml
+  - type: ErrorCatalog
+    url: errors/dnanexus-problem-types.yml
+  - type: Conventions
+    url: conventions/dnanexus-conventions.yml
+  - type: DataModel
+    url: data-model/dnanexus-data-model.yml
+- name: DNAnexus OpenID Connect Provider
+  description: 'DNAnexus operates an OpenID Connect provider that lets third-party web
+    applications sign users in with their DNAnexus Platform credentials. The provider
+    publishes an OIDC discovery document at https://oidc.dnanexus.com/.well-known/openid-configuration,
+    supports the authorization_code grant with PKCE (S256), and issues ID tokens carrying
+    sub, name, email, user_id, sid, auth_time and iss claims. OIDC clients are registered
+    and managed through the Platform API oidcClient methods.'
+  humanURL: https://documentation.dnanexus.com/developer/api/oidc-clients
+  baseURL: https://oidc.dnanexus.com
+  tags:
+  - Authentication
+  - OpenID Connect
+  - Single Sign On
+  - Identity
+  - OAuth
+  properties:
+  - type: Documentation
+    url: https://documentation.dnanexus.com/developer/api/oidc-clients
+  - type: OpenIDConnect
+    url: well-known/dnanexus-oidc-openid-configuration.json
+  - type: OAuthScopes
+    url: scopes/dnanexus-scopes.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -20,4 +94,87 @@ maintainers:
   email: info@apis.io
 common:
 - type: Website
-  url: https://forgeglobal.com/dnanexus_stock/
+  url: https://www.dnanexus.com/
+- type: DeveloperPortal
+  url: https://documentation.dnanexus.com/developer
+- type: Documentation
+  url: https://documentation.dnanexus.com/
+- type: APIReference
+  url: https://documentation.dnanexus.com/developer/api/api-directory
+- type: GettingStarted
+  url: https://documentation.dnanexus.com/getting-started
+- type: Support
+  url: https://community.dnanexus.com/s/
+- type: Blog
+  url: https://blog.dnanexus.com/
+- type: BlogRSS
+  url: https://blog.dnanexus.com/rss.xml
+- type: GitHubOrganization
+  url: https://github.com/dnanexus
+- type: Console
+  url: https://platform.dnanexus.com/
+- type: Pricing
+  url: https://academy.dnanexus.com/billing-access-and-orgs/billing_and_pricing
+- type: SignUp
+  url: https://platform.dnanexus.com/register
+- type: Login
+  url: https://platform.dnanexus.com/login
+- type: TermsOfService
+  url: https://www.dnanexus.com/terms
+- type: PrivacyPolicy
+  url: https://www.dnanexus.com/privacy
+- type: StatusPage
+  url: https://status.dnanexus.com/
+- type: ChangeLog
+  url: changelog/dnanexus-changelog.yml
+- type: ReleaseNotes
+  url: https://documentation.dnanexus.com/release-notes
+- type: Lifecycle
+  url: lifecycle/dnanexus-lifecycle.yml
+- type: Authentication
+  url: authentication/dnanexus-authentication.yml
+- type: OAuthScopes
+  url: scopes/dnanexus-scopes.yml
+- type: Conventions
+  url: conventions/dnanexus-conventions.yml
+- type: Idempotency
+  url: conventions/dnanexus-conventions.yml
+- type: RateLimits
+  url: rate-limits/dnanexus-rate-limits.yml
+- type: ErrorCatalog
+  url: errors/dnanexus-problem-types.yml
+- type: ErrorCodes
+  url: errors/dnanexus-job-failure-reasons.yml
+- type: DataModel
+  url: data-model/dnanexus-data-model.yml
+- type: Packages
+  url: packages/dnanexus-packages.yml
+- type: SDKs
+  url: packages/dnanexus-packages.yml
+- type: CLI
+  url: cli/dnanexus-cli.yml
+- type: WellKnown
+  url: well-known/dnanexus-well-known.yml
+- type: SecurityTxt
+  url: well-known/dnanexus-security.txt
+- type: Security
+  url: https://trust.dnanexus.com
+- type: VulnerabilityDisclosure
+  url: security/dnanexus-vulnerability-disclosure.yml
+- type: TrustCenter
+  url: security/dnanexus-trust-center.yml
+- type: Compliance
+  url: https://www.dnanexus.com/platform-security-compliance
+- type: Conformance
+  url: conformance/dnanexus-conformance.yml
+- type: DomainSecurity
+  url: security/dnanexus-domain-security.yml
+- type: LLMsTxt
+  url: llms/dnanexus-llms.txt
+- type: AgentSkill
+  url: skills/_index.yml
+x-enrichment:
+  date: '2026-08-04'
+  status: enriched
+  artifacts_added: 26
+  pass: local-v1

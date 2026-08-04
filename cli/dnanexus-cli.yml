@@ -1,0 +1,90 @@
+generated: '2026-08-04'
+method: searched
+source: https://documentation.dnanexus.com/user/helpstrings-of-sdk-command-line-utilities
+docs: https://documentation.dnanexus.com/getting-started/cli-quickstart
+downloads: https://documentation.dnanexus.com/downloads
+name: dx
+description: >-
+  dx is the DNAnexus Platform command-line client, shipped inside the dx-toolkit
+  (DNAnexus Platform SDK) alongside the dxpy Python bindings. It is a thin, complete
+  front end over the Platform API: every dx subcommand maps onto one or more API
+  methods, and `dx api` will invoke any API method directly.
+source_repo: https://github.com/dnanexus/dx-toolkit
+license_repo: https://github.com/dnanexus/dx-toolkit/blob/master/COPYING
+install:
+- method: pip
+  command: python3 -m pip install dxpy
+  note: installs both the dx CLI and the Python SDK
+- method: source
+  command: python3 -m pip install -e dx-toolkit/src/python
+  note: recommended local/development install
+command_groups:
+- group: Get started
+  commands: [dx, help]
+- group: Manage your login session
+  commands: [login, logout, exit, whoami, env, clearenv, setenv]
+- group: Navigate and organize files
+  commands: [ls, tree, pwd, select, cd, cp, mv, mkdir, rmdir, rm, rmproject, archive,
+    unarchive, list database files]
+- group: View, download, and upload data
+  subgroups: [File transfer, View data, Create data objects, Data object operations,
+    Searching, Project management, Datasets and cohorts]
+- group: Manage metadata
+  commands: [set_details, get_details, set_visibility, add_types, remove_types, tag,
+    untag, rename, set_properties, unset_properties]
+- group: Build and modify workflows
+  commands: [add stage, remove stage, update stage, update workflow, list stages]
+- group: Run and manage apps
+  subgroups: [Build and publish, Manage app access, Run and monitor, Search for executables
+      and executions, Batch operations]
+- group: Manage organizations
+  subgroups: [Organization setup, Manage members, Searching]
+- group: Share projects and data
+  commands: [invite, uninvite]
+- group: Additional tools
+  commands: [api, build_asset, upgrade]
+utilities:
+- name: dx-app-wizard
+  purpose: scaffold a new app(let)
+- name: dx-fetch-bundled-depends
+  purpose: fetch an app's bundled dependencies
+- name: dx-generate-dxapp
+  purpose: generate a dxapp.json app metadata file
+- name: dx-jobutil-add-output
+  purpose: add a value to a job's output from inside the execution environment
+- name: dx-jobutil-dxlink
+  purpose: emit a DNAnexus link for a data object
+- name: dx-jobutil-new-job
+  purpose: launch a subjob from inside a running job
+- name: dx-jobutil-parse-link
+  purpose: parse a DNAnexus link
+- name: dx-jobutil-report-error
+  purpose: report an AppError/AppInternalError from inside a job
+- name: dx-jobutil-get-identity-token
+  purpose: request a job identity token (OIDC) for access to external cloud services
+key_flows:
+- name: Log in and select a project
+  commands: [dx login, dx select, dx pwd]
+- name: Upload and describe data
+  commands: [dx upload, dx describe, dx ls]
+- name: Build and run an app
+  commands: [dx-app-wizard, dx build, dx run, dx watch]
+- name: Search the platform
+  commands: [dx find data, dx find executions, dx find apps, dx find projects]
+- name: Call any API method directly
+  commands: [dx api]
+  note: '`dx api <class-id> <method> <input JSON>` invokes any of the ~206 documented
+    Platform API methods without a binding.'
+related_binaries:
+- name: Upload Agent (ua)
+  docs: https://documentation.dnanexus.com/user/objects/uploading-and-downloading-files/batch/upload-agent
+- name: Download Agent (dxda)
+  url: https://github.com/dnanexus/dxda
+- name: dxfuse
+  url: https://github.com/dnanexus/dxfuse
+- name: dxCompiler
+  url: https://github.com/dnanexus/dxCompiler
+x-evidence:
+  fetched: '2026-08-04'
+  url: https://documentation.dnanexus.com/user/helpstrings-of-sdk-command-line-utilities.md
+  http_status: 200

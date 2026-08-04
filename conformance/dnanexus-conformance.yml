@@ -1,0 +1,133 @@
+generated: '2026-08-04'
+method: searched
+source: https://documentation.dnanexus.com/developer/api
+note: >-
+  DNAnexus publishes no OpenAPI/Swagger/AsyncAPI/GraphQL contract, so these
+  assertions are read from the provider's own API documentation, its live OIDC
+  discovery documents, and its published compliance material - not derived from a
+  spec.
+standards:
+- id: openapi
+  conforms: false
+  evidence: >-
+    No OpenAPI/Swagger document found. Probed /openapi.json, /openapi.yaml,
+    /swagger.json, /v1/openapi.json, /api-docs, /docs and /redoc on
+    api.dnanexus.com (404 on every path), documentation.dnanexus.com (404) and
+    www.dnanexus.com (404). platform.dnanexus.com answers 200 for every path but
+    serves the SPA HTML shell, not a spec.
+- id: asyncapi
+  conforms: false
+  evidence: No event/streaming contract published; the platform exposes no public webhook
+    surface.
+- id: graphql
+  conforms: false
+  evidence: No /graphql endpoint documented or discovered.
+- id: rest
+  conforms: false
+  evidence: >-
+    The Platform API is RPC-over-HTTP, not REST - every method is an HTTP POST to a
+    /class-xxxx/method or /system/method route, with no resource/verb mapping and no
+    hypermedia.
+- id: json
+  conforms: true
+  evidence: 'All requests and responses are JSON (RFC 4627), UTF-8 encoded; docs:
+    https://documentation.dnanexus.com/developer/api/protocols'
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: >-
+    Errors use a proprietary {"error": {"type", "message", "details"}} envelope, not
+    application/problem+json.
+- id: rfc9116-security-txt
+  conforms: true
+  evidence: 'https://www.dnanexus.com/.well-known/security.txt returns 200 text/plain
+    with Contact, Policy, Expires, Encryption, Acknowledgments and Preferred-Languages
+    fields'
+- id: oauth2
+  conforms: true
+  evidence: >-
+    OIDC provider at https://oidc.dnanexus.com supports the authorization_code grant
+    with PKCE (S256) and client_secret_basic token endpoint auth.
+- id: oidc
+  conforms: true
+  evidence: >-
+    Two OpenID Connect issuers publish discovery documents:
+    https://oidc.dnanexus.com/.well-known/openid-configuration (third-party sign-in)
+    and https://job-oidc.dnanexus.com/.well-known/openid-configuration (job identity
+    tokens for cloud workload federation).
+- id: rfc7636-pkce
+  conforms: true
+  evidence: code_challenge_methods_supported = [S256] in the OIDC discovery document
+- id: rfc8594-sunset-header
+  conforms: false
+  evidence: No Sunset/Deprecation header support documented; deprecations are announced
+    in dated release notes.
+- id: idempotency
+  conforms: true
+  evidence: >-
+    Documented `nonce` request field on 10 creation/run methods, 128-byte limit,
+    1-hour replay guarantee; https://documentation.dnanexus.com/developer/api/nonces
+- id: cursor-pagination
+  conforms: true
+  evidence: '`limit` + `starting` request params with a `next` response cursor on the
+    find* methods; https://documentation.dnanexus.com/developer/api/search'
+- id: cwl
+  conforms: true
+  evidence: 'dxCompiler compiles CWL to the DNAnexus platform; com.dnanexus:cwlscala
+    published to Maven Central'
+- id: wdl
+  conforms: true
+  evidence: 'dxCompiler compiles WDL; com.dnanexus:wdltools published to Maven Central'
+- id: nextflow
+  conforms: true
+  evidence: Documented support for running and building Nextflow pipelines on the platform
+- id: fhir
+  conforms: false
+  evidence: No FHIR resource surface documented
+- id: scim
+  conforms: false
+  evidence: >-
+    No SCIM 2.0 endpoints; user and org provisioning is via the proprietary
+    /user-xxxx and /org-xxxx methods.
+compliance_programs:
+- id: iso-27001
+  status: certified
+  auditor: Schellman
+  evidence: https://trust.dnanexus.com
+- id: fedramp
+  status: authorized
+  level: Moderate
+  evidence: https://trust.dnanexus.com
+- id: govramp
+  status: listed
+  evidence: https://trust.dnanexus.com
+- id: cyber-essentials-plus
+  status: certified
+  evidence: https://trust.dnanexus.com
+- id: hipaa
+  status: supported
+  evidence: >-
+    Encryption in transit and at rest, access logging, and BAAs available;
+    https://documentation.dnanexus.com/faqs/legal-and-compliance
+- id: gdpr
+  status: compliant-as-processor
+  evidence: 'Section 13 of the DNAnexus Privacy Policy; EU/EEA regions available;
+    https://www.dnanexus.com/privacy'
+- id: 21-cfr-part-11
+  status: compliant
+  scope: Titan and Apollo products (electronic signatures out of scope)
+  evidence: https://documentation.dnanexus.com/admin/gxp
+- id: clia
+  status: supported
+  evidence: https://documentation.dnanexus.com/faqs/legal-and-compliance
+- id: pci
+  status: listed
+  evidence: https://trust.dnanexus.com
+- id: eu-us-data-privacy-framework
+  status: listed
+  evidence: https://trust.dnanexus.com
+- id: iso-42001
+  status: in-progress
+  evidence: https://trust.dnanexus.com
+compliance_page: https://www.dnanexus.com/platform-security-compliance
+x-evidence:
+  fetched: '2026-08-04'

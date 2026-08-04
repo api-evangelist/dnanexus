@@ -1,0 +1,60 @@
+generated: '2026-08-04'
+method: probed
+source: https://oidc.dnanexus.com/.well-known/openid-configuration
+docs: https://documentation.dnanexus.com/developer/api/oidc-clients
+note: >-
+  The DNAnexus Platform API itself (api.dnanexus.com) is bearer-token authenticated
+  and has NO OAuth scope surface - a token carries the full permissions of the user
+  or job it was issued for, and access is instead constrained by project/org
+  permission levels (VIEW / UPLOAD / CONTRIBUTE / ADMINISTER). The scopes below
+  belong to the DNAnexus OpenID Connect provider, which third-party web apps use to
+  sign users in.
+schemes:
+- name: DNAnexusOIDC
+  issuer: https://oidc.dnanexus.com
+  source: https://oidc.dnanexus.com/.well-known/openid-configuration
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://oidc.dnanexus.com/authorize
+    pkce: S256
+    response_types: [code]
+scopes:
+- scope: openid
+  description: Required OpenID Connect scope; requests an ID token for the signed-in
+    DNAnexus user.
+  flows: [authorizationCode]
+  claims: [sub, sid, auth_time, iss]
+  sources: [https://oidc.dnanexus.com/.well-known/openid-configuration]
+- scope: name
+  description: Releases the DNAnexus user's display name as the `name` claim.
+  flows: [authorizationCode]
+  claims: [name]
+  sources: [https://oidc.dnanexus.com/.well-known/openid-configuration]
+- scope: email
+  description: Releases the DNAnexus user's email address as the `email` claim.
+  flows: [authorizationCode]
+  claims: [email]
+  sources: [https://oidc.dnanexus.com/.well-known/openid-configuration]
+- scope: user_id
+  description: Releases the DNAnexus platform user handle (user-xxxx) as the `user_id`
+    claim.
+  flows: [authorizationCode]
+  claims: [user_id]
+  sources: [https://oidc.dnanexus.com/.well-known/openid-configuration]
+job_identity_provider:
+  issuer: https://job-oidc.dnanexus.com
+  source: https://job-oidc.dnanexus.com/.well-known/openid-configuration
+  scopes: [openid]
+  note: >-
+    Job identity tokens support only the `openid` scope; the audience is set by the
+    caller and the claim set (job_id, project_id, app_name, bill_to, region, ...)
+    is what a relying cloud provider writes its trust policy against.
+platform_permission_model:
+  docs: https://documentation.dnanexus.com/developer/api/data-containers/project-permissions-and-sharing
+  levels: [VIEW, UPLOAD, CONTRIBUTE, ADMINISTER]
+  note: >-
+    Project permission levels, not OAuth scopes, are the authorization surface for
+    the Platform API.
+x-evidence:
+  fetched: '2026-08-04'
+  http_status: 200

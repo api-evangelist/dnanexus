@@ -1,0 +1,57 @@
+generated: '2026-08-04'
+method: searched
+source: https://documentation.dnanexus.com/developer/api/service-limits
+docs: https://documentation.dnanexus.com/developer/api/service-limits
+api: DNAnexus Platform API
+scope: per account
+note: >-
+  Unless otherwise noted each limit is specific to the underlying combination of
+  cloud provider and region used. DNAnexus documents no rate-limit response headers;
+  exceeding a limit surfaces as the RateLimitConditional error type with HTTP 429.
+rate_limits:
+- name: API Calls
+  limit_count: 200
+  limit_interval: second
+  unit: requests
+  scope: account
+- name: Listing Objects
+  limit_count: 400000
+  limit_interval: request
+  unit: objects
+  scope: request
+- name: Moving Objects
+  limit_count: 100000
+  limit_interval: request
+  unit: objects
+  scope: request
+- name: Deleting Objects
+  limit_count: 10000
+  limit_interval: request
+  unit: objects
+  scope: request
+- name: Mounting Project Folders in Linux
+  limit_count: 255000
+  unit: folders
+  scope: account
+- name: File Upload (Amazon regions)
+  limit_count: 5
+  unit: TB per file
+  scope: file
+- name: File Upload (Azure regions)
+  limit_count: 4.75
+  unit: TB per file
+  scope: file
+- name: Running Workers
+  limit_count: 100
+  unit: workers
+  scope: user
+error_signal:
+  type: RateLimitConditional
+  http_status: 429
+  source: https://documentation.dnanexus.com/developer/api/protocols
+headers:
+  documented: false
+x-evidence:
+  fetched: '2026-08-04'
+  url: https://documentation.dnanexus.com/developer/api/service-limits.md
+  http_status: 200

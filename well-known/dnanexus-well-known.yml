@@ -1,0 +1,95 @@
+generated: '2026-08-04'
+method: probed
+source: live GET of /.well-known/* on every DNAnexus host in apis.yml
+note: >-
+  platform.dnanexus.com is a single-page application whose catch-all route answers
+  HTTP 200 with the app HTML shell for EVERY path, including every /.well-known/*
+  path and /openapi.json. Those 200s are false positives and are recorded here as
+  spa-catchall, not as documents.
+hosts:
+- host: https://www.dnanexus.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    content_type: text/plain
+    file: dnanexus-security.txt
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: https://dnanexus.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    content_type: text/plain
+    file: dnanexus-security.txt
+    note: identical body to www.dnanexus.com
+- host: https://api.dnanexus.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: https://oidc.dnanexus.com
+  documents:
+  - path: /.well-known/openid-configuration
+    status: 200
+    content_type: application/json
+    file: dnanexus-oidc-openid-configuration.json
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/jwks.json
+    status: 404
+    note: JWKS is published at https://oidc.dnanexus.com/jwks (non-well-known path)
+- host: https://job-oidc.dnanexus.com
+  documents:
+  - path: /.well-known/openid-configuration
+    status: 200
+    content_type: application/json
+    file: dnanexus-job-oidc-openid-configuration.json
+  - path: /.well-known/oauth-authorization-server
+    status: 403
+  - path: /.well-known/jwks.json
+    status: 403
+    note: JWKS is published at https://job-oidc.dnanexus.com/.well-known/jwks
+- host: https://auth.dnanexus.com
+  documents:
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+- host: https://documentation.dnanexus.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: https://platform.dnanexus.com
+  spa_catchall: true
+  documents:
+  - path: /.well-known/*
+    status: 200
+    verdict: false-positive
+    note: SPA catch-all returns text/html app shell for every path; no real documents
+x-evidence:
+  fetched: '2026-08-04'

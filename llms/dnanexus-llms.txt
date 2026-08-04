@@ -1,0 +1,291 @@
+# DNAnexus Documentation
+
+## DNAnexus Documentation
+
+- [Overview](https://documentation.dnanexus.com/readme.md)
+- [Getting Started](https://documentation.dnanexus.com/getting-started.md): Get to know the features you'll use every day in these short, task-oriented tutorials.
+- [DNAnexus Essentials](https://documentation.dnanexus.com/getting-started/onboarding-tutorial.md): Learn to upload data, create a project, run an analysis, and visualize results.
+- [Key Concepts](https://documentation.dnanexus.com/getting-started/key-concepts.md): By understanding projects, organizations, apps, and workflows, you'll improve your understanding of the DNAnexus Platform.
+- [Projects](https://documentation.dnanexus.com/getting-started/key-concepts/projects.md): Learn to use projects to collaborate, organize your work, manage billing, and control access to files and executables.
+- [Organizations](https://documentation.dnanexus.com/getting-started/key-concepts/organizations.md): Learn about organizations, which associate users, projects, and resources with one another, enabling fluid collaboration, and simplifying the management of access, sharing, and billing.
+- [Apps and Workflows](https://documentation.dnanexus.com/getting-started/key-concepts/apps-and-workflows.md): Every analysis in DNAnexus is run using apps. Apps can be linked together to create workflows. Learn the basics of using both.
+- [User Interface Quickstart](https://documentation.dnanexus.com/getting-started/ui-quickstart.md): Learn to create a project, add members and data to the project, and run a simple workflow.
+- [Command Line Quickstart](https://documentation.dnanexus.com/getting-started/cli-quickstart.md): Learn to use the dx client for command-line access to the full range of DNAnexus Platform features.
+- [Developer Quickstart](https://documentation.dnanexus.com/getting-started/developer-quickstart.md): Learn to build an app that you can run on the Platform.
+- [Developer Tutorials](https://documentation.dnanexus.com/getting-started/developer-tutorials.md): Access developer tutorials and examples.
+- [Bash](https://documentation.dnanexus.com/getting-started/developer-tutorials/bash.md)
+- [Bash Helpers](https://documentation.dnanexus.com/getting-started/developer-tutorials/bash/bash-helpers.md): Learn to build an applet that performs a basic SAMtools count with the aid of bash helper variables.
+- [Distributed by Chr (sh)](https://documentation.dnanexus.com/getting-started/developer-tutorials/bash/distributed-by-chr-sh.md)
+- [Distributed by Region (sh)](https://documentation.dnanexus.com/getting-started/developer-tutorials/bash/distributed-by-region-sh.md)
+- [SAMtools count](https://documentation.dnanexus.com/getting-started/developer-tutorials/bash/samtools-count.md)
+- [TensorBoard Example Web App](https://documentation.dnanexus.com/getting-started/developer-tutorials/bash/tensorboard-example-web-app.md)
+- [Git Dependency](https://documentation.dnanexus.com/getting-started/developer-tutorials/bash/git-dependency.md)
+- [Mkfifo and dx cat](https://documentation.dnanexus.com/getting-started/developer-tutorials/bash/mkfifo-and-dx-cat.md)
+- [Parallel by Chromosome (sh)](https://documentation.dnanexus.com/getting-started/developer-tutorials/bash/parallel-by-region-sh.md): This applet performs a basic SAMtools count on a series of sliced (by canonical chromosome) BAM files in parallel using wait (Ubuntu 14.04+).
+- [Parallel xargs by Chr](https://documentation.dnanexus.com/getting-started/developer-tutorials/bash/parallel-xargs-by-chr.md): This applet slices a BAM file by canonical chromosome then performs a parallelized samtools view -c using xargs. Type man xargs for general usage information.
+- [Precompiled Binary](https://documentation.dnanexus.com/getting-started/developer-tutorials/bash/precompiled-binary.md): This tutorial showcases packaging a precompiled binary in the resources/ directory of an app(let).
+- [R Shiny Example Web App](https://documentation.dnanexus.com/getting-started/developer-tutorials/bash/r-shiny-example-web-app.md): This is an example web applet that shows how to build and run an R Shiny application on DNAnexus.
+- [Python](https://documentation.dnanexus.com/getting-started/developer-tutorials/python.md)
+- [Dash Example Web App](https://documentation.dnanexus.com/getting-started/developer-tutorials/python/dash-example-web-app.md): This is an example web app made with Dash, which in turn uses Flask underneath.
+- [Distributed by Region (py)](https://documentation.dnanexus.com/getting-started/developer-tutorials/python/distributed-by-region-py.md): This applet creates a count of reads from a BAM format file.
+- [Parallel by Chr (py)](https://documentation.dnanexus.com/getting-started/developer-tutorials/python/parallel-by-chr-py.md): This applet tutorial performs a SAMtools count using parallel threads.
+- [Parallel by Region (py)](https://documentation.dnanexus.com/getting-started/developer-tutorials/python/parallel-by-region-py.md): This applet tutorial performs a SAMtools count using parallel processes.
+- [Pysam](https://documentation.dnanexus.com/getting-started/developer-tutorials/python/pysam.md): This applet performs a SAMtools count on an input BAM using Pysam, a python wrapper for SAMtools.
+- [TensorBoard Example Web App](https://documentation.dnanexus.com/getting-started/developer-tutorials/python/tensorboard-example-web-app.md): This example demonstrates how to run TensorBoard inside a DNAnexus applet.
+- [Concurrent Computing Tutorials](https://documentation.dnanexus.com/getting-started/developer-tutorials/concurrent-computing-tutorials.md): Learn important terminology before using parallel and distributed computing paradigms on the DNAnexus Platform.
+- [Distributed](https://documentation.dnanexus.com/getting-started/developer-tutorials/concurrent-computing-tutorials/distributed.md)
+- [Distributed by Region (sh)](https://documentation.dnanexus.com/getting-started/developer-tutorials/concurrent-computing-tutorials/distributed/distributed-by-region-sh.md)
+- [Distributed by Chr (sh)](https://documentation.dnanexus.com/getting-started/developer-tutorials/concurrent-computing-tutorials/distributed/distributed-by-chr-sh.md)
+- [Distributed by Region (py)](https://documentation.dnanexus.com/getting-started/developer-tutorials/concurrent-computing-tutorials/distributed/distributed-by-region-py.md): This applet creates a count of reads from a BAM format file.
+- [Parallel](https://documentation.dnanexus.com/getting-started/developer-tutorials/concurrent-computing-tutorials/parallel.md)
+- [Parallel by Chr (py)](https://documentation.dnanexus.com/getting-started/developer-tutorials/concurrent-computing-tutorials/parallel/parallel-by-chr-py.md): This applet tutorial performs a SAMtools count using parallel threads.
+- [Parallel by Region (py)](https://documentation.dnanexus.com/getting-started/developer-tutorials/concurrent-computing-tutorials/parallel/parallel-by-region-py.md): This applet tutorial performs a SAMtools count using parallel processes.
+- [Parallel by Chromosome (sh)](https://documentation.dnanexus.com/getting-started/developer-tutorials/concurrent-computing-tutorials/parallel/parallel-by-region-sh.md): This applet performs a basic SAMtools count on a series of sliced (by canonical chromosome) BAM files in parallel using wait.
+- [Parallel xargs by Chr](https://documentation.dnanexus.com/getting-started/developer-tutorials/concurrent-computing-tutorials/parallel/parallel-xargs-by-chr.md): This applet slices a BAM file by canonical chromosome and performs a parallelized SAMtools view.
+- [User](https://documentation.dnanexus.com/user.md): In this section, learn to access and use the Platform via both its command-line interface (CLI) and its user interface (UI).
+- [Login and Logout](https://documentation.dnanexus.com/user/login-and-logout.md): Learn how to log into and out of the DNAnexus Platform, via both the user interface and the command-line interface. Learn how to use tokens to log in, and how to set up two-factor authentication.
+- [Projects](https://documentation.dnanexus.com/user/projects.md)
+- [Project Navigation](https://documentation.dnanexus.com/user/projects/project-navigation.md)
+- [Path Resolution](https://documentation.dnanexus.com/user/projects/path-resolution.md)
+- [Running Apps and Workflows](https://documentation.dnanexus.com/user/running-apps-and-workflows.md)
+- [Running Apps and Applets](https://documentation.dnanexus.com/user/running-apps-and-workflows/running-apps-and-applets.md)
+- [Running Workflows](https://documentation.dnanexus.com/user/running-apps-and-workflows/running-workflows.md)
+- [Running Nextflow Pipelines](https://documentation.dnanexus.com/user/running-apps-and-workflows/running-nextflow-pipelines.md): This tutorial shows how to use Nextflow pipelines on the DNAnexus Platform by importing a Nextflow pipeline from a remote repository or building from local disk space.
+- [Running Batch Jobs](https://documentation.dnanexus.com/user/running-apps-and-workflows/running-batch-jobs.md)
+- [Monitoring Executions](https://documentation.dnanexus.com/user/running-apps-and-workflows/monitoring-executions.md): Learn how to get information on current and past executions via both the UI and the CLI.
+- [Job Notifications](https://documentation.dnanexus.com/user/running-apps-and-workflows/job-notifications.md): Learn how to set job notification thresholds on the DNAnexus Platform.
+- [Job Lifecycle](https://documentation.dnanexus.com/user/running-apps-and-workflows/job-lifecycle.md): Learn about the states through which a job or analysis may go, during its lifecycle.
+- [Executions and Time Limits](https://documentation.dnanexus.com/user/running-apps-and-workflows/job-time-limits.md): Learn about different types of time limits on executions, and how they can affect your executions on the DNAnexus Platform.
+- [Executions and Cost and Spending Limits](https://documentation.dnanexus.com/user/running-apps-and-workflows/jobs-and-cost-and-spending-limits.md): Learn about limits on the costs executions can incur, and how these limits can affect executions on the DNAnexus Platform.
+- [Smart Reuse (Job Reuse)](https://documentation.dnanexus.com/user/running-apps-and-workflows/job-reuse.md): Speed workflow development and reduce testing costs by reusing computational outputs.
+- [Apps and Workflows Glossary](https://documentation.dnanexus.com/user/running-apps-and-workflows/apps-and-workflows-glossary.md): Learn key terms used to describe apps and workflows.
+- [Tools List](https://documentation.dnanexus.com/user/running-apps-and-workflows/tools-list.md)
+- [Cohort Browser](https://documentation.dnanexus.com/user/cohort-browser.md): Visualize your data and browse your multi-omics datasets.
+- [Creating Charts and Dashboards](https://documentation.dnanexus.com/user/cohort-browser/creating-visualizations.md): Create charts, manage dashboards, and build visualizations to explore your datasets in the Cohort Browser.
+- [Defining and Managing Cohorts](https://documentation.dnanexus.com/user/cohort-browser/defining-cohorts.md): Create, filter, and manage patient cohorts using clinical, genomic, and other data fields in the Cohort Browser.
+- [Analyzing Germline Variants](https://documentation.dnanexus.com/user/cohort-browser/analyzing-germline-variants.md): Analyze germline genomic variants, including filtering, visualization, and detailed variant annotation in the Cohort Browser.
+- [Analyzing Somatic Variants](https://documentation.dnanexus.com/user/cohort-browser/analyzing-somatic-variants.md): Analyze somatic variants, including cancer-specific filtering, visualization, and variant landscape exploration in the Cohort Browser.
+- [Analyzing Gene Expression Data](https://documentation.dnanexus.com/user/cohort-browser/analyzing-gene-expression.md): Analyze gene expression data, including expression-based filtering, visualization, and molecular profiling in the Cohort Browser.
+- [Chart Types](https://documentation.dnanexus.com/user/cohort-browser/chart-types.md): Get an overview of the range of different charts you can build and use in the Cohort Browser.
+- [Box Plot](https://documentation.dnanexus.com/user/cohort-browser/chart-types/box-plot.md): Learn to build and use box plots in the Cohort Browser.
+- [Grouped Box Plot](https://documentation.dnanexus.com/user/cohort-browser/chart-types/grouped-box-plot.md): Learn to build and use grouped box plots in the Cohort Browser.
+- [Histogram](https://documentation.dnanexus.com/user/cohort-browser/chart-types/histogram.md): Learn to build and use histograms in the Cohort Browser.
+- [Kaplan-Meier Survival Curve](https://documentation.dnanexus.com/user/cohort-browser/chart-types/survival-plot-tile.md): Learn to build and use Kaplan-Meier Survival Curve charts in the Cohort Browser.
+- [List View](https://documentation.dnanexus.com/user/cohort-browser/chart-types/list-view.md): Learn to build and use list views in the Cohort Browser.
+- [Row Chart](https://documentation.dnanexus.com/user/cohort-browser/chart-types/row-chart.md): Learn to build and use row charts in the Cohort Browser.
+- [Scatter Plot](https://documentation.dnanexus.com/user/cohort-browser/chart-types/scatter-plot.md): Learn to build and use scatter plots in the Cohort Browser.
+- [Stacked Row Chart](https://documentation.dnanexus.com/user/cohort-browser/chart-types/stacked-row-chart.md): Learn to build and use stacked row charts in the Cohort Browser.
+- [Omics Data Agent](https://documentation.dnanexus.com/user/omics-data-agent.md): Explore and analyze datasets using natural language queries with Omics Data Agent, a GenAI-powered interface integrated into Cohort Browser.
+- [Using JupyterLab](https://documentation.dnanexus.com/user/jupyter-notebooks.md): Use Jupyter notebooks on the DNAnexus Platform to craft sophisticated custom analyses in your preferred coding language.
+- [JupyterLab Quickstart](https://documentation.dnanexus.com/user/jupyter-notebooks/quickstart.md): In this tutorial, you will learn how to create and run a notebook in JupyterLab on the platform, download data from the notebook, and upload results to the platform.
+- [Running JupyterLab](https://documentation.dnanexus.com/user/jupyter-notebooks/running-dxjupyterlab.md): Learn to launch a JupyterLab session on the DNAnexus Platform, via the JupyterLab app.
+- [FreeSurfer in JupyterLab](https://documentation.dnanexus.com/user/jupyter-notebooks/running-dxjupyterlab/freesurfer-in-dxjupyterlab.md): Learn how to use FreeSurfer in JupyterLab.
+- [Spark Cluster-Enabled JupyterLab](https://documentation.dnanexus.com/user/jupyter-notebooks/dxjupyterlab-spark-cluster.md): Learn to use the JupyterLab Spark Cluster app.
+- [Exploring and Querying Datasets](https://documentation.dnanexus.com/user/jupyter-notebooks/dxjupyterlab-spark-cluster/exploring-and-querying-with-spark.md)
+- [MONAI in JupyterLab](https://documentation.dnanexus.com/user/jupyter-notebooks/monai-in-dxjupyterlab.md): Using MONAI Core, MONAI Label/3D Slicer (SlicerJupyter) via JupyterLab
+- [Stata in JupyterLab](https://documentation.dnanexus.com/user/jupyter-notebooks/stata-in-dxjupyterlab.md): Use Stata via JupyterLab, work with project files, and create datasets with Spark.
+- [Running Earlier Versions of JupyterLab](https://documentation.dnanexus.com/user/jupyter-notebooks/running-older-versions-of-dxjupyterlab.md): Learn how to run an earlier version of JupyterLab via the user interface or command-line interface.
+- [JupyterLab Reference](https://documentation.dnanexus.com/user/jupyter-notebooks/references.md): This page is a reference for the most useful operations and features in the JupyterLab environment.
+- [Posit Workbench (RStudio)](https://documentation.dnanexus.com/user/rstudio.md): Learn how to start RStudio sessions, transfer files, and manage backups in Posit Workbench (RStudio) on the DNAnexus Platform.
+- [Using Spark](https://documentation.dnanexus.com/user/spark.md): Connect with Spark for database sharing, big data analytics, and rich visualizations.
+- [Apollo Apps](https://documentation.dnanexus.com/user/spark/apollo-apps.md)
+- [Example Applications](https://documentation.dnanexus.com/user/spark/example-applications.md)
+- [CSV Loader](https://documentation.dnanexus.com/user/spark/example-applications/csv-loader.md)
+- [SQL Runner](https://documentation.dnanexus.com/user/spark/example-applications/spark-sql-runner.md)
+- [VCF Loader](https://documentation.dnanexus.com/user/spark/example-applications/vcf-loader.md)
+- [VCF Preprocessing](https://documentation.dnanexus.com/user/spark/vcf-preprocessing.md): Learn about preprocessing VCF data before using it in an analysis.
+- [Environment Variables](https://documentation.dnanexus.com/user/environment-variables.md)
+- [Objects](https://documentation.dnanexus.com/user/objects.md)
+- [Describing Data Objects](https://documentation.dnanexus.com/user/objects/describing-data-objects.md)
+- [Searching Data Objects](https://documentation.dnanexus.com/user/objects/searching-data-objects.md)
+- [Visualizing Data](https://documentation.dnanexus.com/user/objects/visualizing-data.md)
+- [Filtering Objects and Jobs](https://documentation.dnanexus.com/user/objects/filtering-objects-and-jobs.md)
+- [Archiving Files](https://documentation.dnanexus.com/user/objects/archiving-files.md): Learn how to archive files, a cost-effective way to retain files in accord with data-retention policies, while keeping them secure and accessible, and preserving file provenance and metadata.
+- [Relational Database Clusters](https://documentation.dnanexus.com/user/objects/relational-database-clusters.md)
+- [Uploading and Downloading Files](https://documentation.dnanexus.com/user/objects/uploading-and-downloading-files.md)
+- [Small File Sets](https://documentation.dnanexus.com/user/objects/uploading-and-downloading-files/small-sets-of-files.md)
+- [dx upload](https://documentation.dnanexus.com/user/objects/uploading-and-downloading-files/small-sets-of-files/uploading-using-dx.md)
+- [dx download](https://documentation.dnanexus.com/user/objects/uploading-and-downloading-files/small-sets-of-files/downloading-using-dx.md): Learn how to use the dx download command to download data and share files among collaborators.
+- [Batch](https://documentation.dnanexus.com/user/objects/uploading-and-downloading-files/batch.md)
+- [Upload Agent](https://documentation.dnanexus.com/user/objects/uploading-and-downloading-files/batch/upload-agent.md)
+- [Download Agent](https://documentation.dnanexus.com/user/objects/uploading-and-downloading-files/batch/download-agent.md)
+- [Omics Data Catalog](https://documentation.dnanexus.com/user/omics-data-catalog.md)
+- [Concepts and Architecture](https://documentation.dnanexus.com/user/omics-data-catalog/concepts-and-architecture.md)
+- [Explore Trusted Research Environments](https://documentation.dnanexus.com/user/trusted-research-environments.md): Explore DNAnexus Trusted Research Environments (TREs), a secure framework for controlled data sharing and analysis.
+- [TRE Roles and Permissions](https://documentation.dnanexus.com/user/trusted-research-environments/roles-and-permissions.md): Understand the distinct roles within a DNAnexus TRE and how they interact throughout the data access lifecycle.
+- [Discover Research Environments and Explore Data](https://documentation.dnanexus.com/user/trusted-research-environments/discovering-tres.md): Locate a research environment, review its contents, and preview participant data distributions before submitting a data access request.
+- [Submit a Data Access Request](https://documentation.dnanexus.com/user/trusted-research-environments/submitting-access-request.md): Create, configure, and submit a data access request in a Trusted Research Environment, including cohort selection, data collection choices, and collaborator management.
+- [Review Data Access Requests](https://documentation.dnanexus.com/user/trusted-research-environments/reviewing-access-requests.md): Evaluate data access requests as a designated reviewer in a Trusted Research Environment, including inspecting cohort and field selections, registering approval or rejection decisions, and communicati
+- [Create Projects and Access Dispensed Data](https://documentation.dnanexus.com/user/trusted-research-environments/creating-projects.md): Create a project from an approved data access request and understand automatic data dispensal and research environment policies in your restricted workspace.
+- [Platform IDs](https://documentation.dnanexus.com/user/platform-ids.md): Learn about Platform IDs, unique identifiers for each object on the Platform, enabling users to easily and quickly find, organize, and use each object.
+- [Organization Member Guide](https://documentation.dnanexus.com/user/organization-member-guide.md)
+- [Index of dx commands](https://documentation.dnanexus.com/user/helpstrings-of-sdk-command-line-utilities.md): This page contains the help messages for each of the commands under dx, grouped by their primary category.
+- [Developer](https://documentation.dnanexus.com/developer.md): Learn to manage data, users, and work on the Platform, via its API. Create and share reusable pipelines, applications for analyzing data, custom viewers, and workflows.
+- [Developing Portable Pipelines](https://documentation.dnanexus.com/developer/building-and-executing-portable-containers-for-bioinformatics-software.md)
+- [dxCompiler](https://documentation.dnanexus.com/developer/building-and-executing-portable-containers-for-bioinformatics-software/dxcompiler.md): An introduction to using dxCompiler, a tool for compiling WDL and CWL workflows on the DNAnexus Platform
+- [Cloud Workstation](https://documentation.dnanexus.com/developer/cloud-workstation.md): Learn about the Cloud Workstation app for exploring and manipulating data on the DNAnexus Platform, as you would on a local Linux machine.
+- [Apps](https://documentation.dnanexus.com/developer/apps.md): Learn how to build custom applications and deploy them on the Platform.
+- [Introduction to Building Apps](https://documentation.dnanexus.com/developer/apps/intro-to-building-apps.md): Learn to build a custom applet and run it on the DNAnexus Platform. Optionally, convert your applet to an app so it can be run by other users, in their own projects.
+- [App Build Process](https://documentation.dnanexus.com/developer/apps/app-build-process.md): Learn the basic app infrastructure you need to know to build your own DNAnexus app.
+- [Advanced Applet Tutorial](https://documentation.dnanexus.com/developer/apps/advanced-app-tutorial.md): Learn to use Sambamba to create advanced Bash applets for use on the DNAnexus Platform.
+- [Bash Apps](https://documentation.dnanexus.com/developer/apps/bash.md): Learn to write a basic Bash app .
+- [Python Apps](https://documentation.dnanexus.com/developer/apps/python.md): Learn to build a Python app on the DNAnexus Platform.
+- [Spark Apps](https://documentation.dnanexus.com/developer/apps/developing-spark-apps.md): Learn to develop Spark apps for use in Apollo.
+- [Table Exporter](https://documentation.dnanexus.com/developer/apps/developing-spark-apps/table-exporter-application.md): Learn to use Table Exporter to extract data from an Apollo Dataset, cohort, or dashboard into a delimited file for use in analysis, or download.
+- [DX Spark Submit Utility](https://documentation.dnanexus.com/developer/apps/developing-spark-apps/dx-spark-submit-utility.md): dx-spark-submit is a utility script that can be used in DNAnexus Spark applications to more easily submit and monitor a Spark job.
+- [HTTPS Apps](https://documentation.dnanexus.com/developer/apps/https-applications.md): Run applications that are accessible via HTTPS.
+- [Isolated Browsing for HTTPS Apps](https://documentation.dnanexus.com/developer/apps/https-applications/isolated-browsing-for-https-apps.md): Restrict data transfer between HTTPS apps and the user's local computer.
+- [Transitioning from Applets to Apps](https://documentation.dnanexus.com/developer/apps/transitioning-from-applets-to-apps.md)
+- [Third Party and Community Apps](https://documentation.dnanexus.com/developer/apps/third-party-and-community-apps.md)
+- [Community App Guidelines](https://documentation.dnanexus.com/developer/apps/third-party-and-community-apps/community-app-guidelines.md)
+- [Third Party App Style Guide](https://documentation.dnanexus.com/developer/apps/third-party-and-community-apps/third-party-app-style-guide.md)
+- [Third Party App Publishing Checklist](https://documentation.dnanexus.com/developer/apps/third-party-and-community-apps/third-party-app-publishing-checklist.md)
+- [App Metadata](https://documentation.dnanexus.com/developer/apps/app-metadata.md)
+- [App Permissions](https://documentation.dnanexus.com/developer/apps/app-permissions.md)
+- [App Execution Environment](https://documentation.dnanexus.com/developer/apps/execution-environment.md)
+- [Connecting to Jobs](https://documentation.dnanexus.com/developer/apps/execution-environment/connecting-to-jobs.md)
+- [Dependency Management](https://documentation.dnanexus.com/developer/apps/dependency-management.md)
+- [Asset Build Process](https://documentation.dnanexus.com/developer/apps/dependency-management/asset-build-process.md)
+- [Docker Images](https://documentation.dnanexus.com/developer/apps/dependency-management/using-docker-images.md): Run Docker containers within DNAnexus applications.
+- [Python package installation in Ubuntu 24.04 AEE](https://documentation.dnanexus.com/developer/apps/dependency-management/python-package-installation-in-ubuntu-24-04-aee.md)
+- [Job Identity Tokens for Access to Clouds and Third-Party Services](https://documentation.dnanexus.com/developer/apps/job-identity-tokens-for-access-to-clouds-and-third-party-services.md): Learn how to use job identity tokens to enable jobs to access external services such as your AWS cloud resources.
+- [Enabling Web Application Users to Log In with DNAnexus Credentials](https://documentation.dnanexus.com/developer/apps/enabling-web-application-users-to-log-in-with-dnanexus-credentials.md): Learn how to configure your app to allow app users to log in using DNAnexus credentials.
+- [Types of Errors](https://documentation.dnanexus.com/developer/apps/error-information.md): This page lists information about errors that can occur when executing jobs.
+- [Workflows](https://documentation.dnanexus.com/developer/workflows.md): A workflow is a set of apps or applets linked together through dependencies - commonly, the outputs of one serve as the inputs to another.
+- [Importing Workflows](https://documentation.dnanexus.com/developer/workflows/importing-workflows.md): Users can import external workflows to simplify their data analysis process.
+- [Introduction to Building Workflows](https://documentation.dnanexus.com/developer/workflows/intro-to-building-workflows.md)
+- [Building and Running Workflows](https://documentation.dnanexus.com/developer/workflows/building-and-running-workflows.md)
+- [Workflow Build Process](https://documentation.dnanexus.com/developer/workflows/workflow-build-process.md): Build and manage DNAnexus workflows programmatically using dx-toolkit and JSON workflow definitions.
+- [Versioning and Publishing Global Workflows](https://documentation.dnanexus.com/developer/workflows/version-and-publish-workflows.md): Learn how to create both a local, project-based workflow, and a versioned, global workflow that can be published and listed in the Platform Tools library.
+- [Workflow Metadata](https://documentation.dnanexus.com/developer/workflows/workflow-metadata.md): Use workflow metadata to allow the dx build command to build a workflow according to your specifications.
+- [Ingesting Data](https://documentation.dnanexus.com/developer/ingesting-data.md): Understand common use cases for the types of data you can ingest.
+- [Data Catalog Loader](https://documentation.dnanexus.com/developer/ingesting-data/data-catalog-loader.md)
+- [Data Model Loader](https://documentation.dnanexus.com/developer/ingesting-data/data-model-loader.md): Create datasets with your phenotypic, clinical, and other semi-structured data.
+- [Data Ingestion Key Steps](https://documentation.dnanexus.com/developer/ingesting-data/data-model-loader/data-ingestion-key-steps.md)
+- [Ingestion Data Types](https://documentation.dnanexus.com/developer/ingesting-data/data-model-loader/ingestion-data-types.md)
+- [Data Files Used by the Data Model Loader](https://documentation.dnanexus.com/developer/ingesting-data/data-model-loader/data-file-inputs-data-model-loader.md)
+- [Troubleshooting](https://documentation.dnanexus.com/developer/ingesting-data/data-model-loader/troubleshooting.md): Common errors and resolutions for the Data Model Loader.
+- [Somatic Variant Assay Loader](https://documentation.dnanexus.com/developer/ingesting-data/somatic-variant-assay-loader.md): Ingest and annotate somatic variant data from VCF files into an Apollo Dataset.
+- [Molecular Expression Assay Loader](https://documentation.dnanexus.com/developer/ingesting-data/molecular-expression-assay-loader.md)
+- [Dataset Extender](https://documentation.dnanexus.com/developer/ingesting-data/dataset-extender.md): Learn to use Dataset Extender, which allows you to expand a core Apollo dataset, then access the newly added data.
+- [Using Dataset Extender](https://documentation.dnanexus.com/developer/ingesting-data/dataset-extender/dataset-extender-usage.md): Common usage patterns for the Dataset Extender app.
+- [Dataset Management](https://documentation.dnanexus.com/developer/dataset-management.md)
+- [Creating Multi-Assay Datasets](https://documentation.dnanexus.com/developer/dataset-management/creating-multi-assay-datasets.md): Learn how to create multi-assay datasets that combine different data types for comprehensive analysis.
+- [Rebase Cohorts And Dashboards](https://documentation.dnanexus.com/developer/dataset-management/rebase-cohorts-and-dashboards.md): Learn to use the Rebase Cohorts And Dashboards app, which provides a simple way to move cohorts or dashboard views from one Apollo Dataset to another.
+- [Assay Dataset Merger](https://documentation.dnanexus.com/developer/dataset-management/assay-dataset-merger.md)
+- [Clinical Dataset Merger](https://documentation.dnanexus.com/developer/dataset-management/clinical-dataset-merger.md)
+- [Apollo Datasets](https://documentation.dnanexus.com/developer/datasets.md): Learn about Apollo Datasets, how they're constructed, and how to use them.
+- [Dataset Versions](https://documentation.dnanexus.com/developer/datasets/dataset-versions.md): Learn about the differences between V1.1 and V3.0 Apollo Datasets.
+- [Cohorts](https://documentation.dnanexus.com/developer/datasets/cohorts.md): Learn about cohort objects and the data they contain.
+- [Creating Custom Viewers](https://documentation.dnanexus.com/developer/creating-custom-viewers.md)
+- [Client Libraries](https://documentation.dnanexus.com/developer/client-libraries.md)
+- [Support for Python 3](https://documentation.dnanexus.com/developer/client-libraries/support-for-python3.md)
+- [Walkthroughs](https://documentation.dnanexus.com/developer/walkthroughs.md)
+- [Creating a Mixed Phenotypic Assay Dataset](https://documentation.dnanexus.com/developer/walkthroughs/creating-a-mixed-phenotypic-assay-dataset.md): Learn to create an Apollo dataset incorporating both phenotypic and assay data.
+- [Guide for Ingesting a Four Table Dataset](https://documentation.dnanexus.com/developer/walkthroughs/guide-for-ingesting-a-four-table-dataset.md): Learn to use the Data Model Loader app to ingest phenotypic data and create a dataset for use in Apollo.
+- [DNAnexus API](https://documentation.dnanexus.com/developer/api.md): Learn to access the DNAnexus Platform programmatically.
+- [Entity IDs](https://documentation.dnanexus.com/developer/api/entity-ids.md)
+- [Protocols](https://documentation.dnanexus.com/developer/api/protocols.md)
+- [Authentication](https://documentation.dnanexus.com/developer/api/authentication.md)
+- [Regions](https://documentation.dnanexus.com/developer/api/regions.md)
+- [Nonces](https://documentation.dnanexus.com/developer/api/nonces.md)
+- [Users](https://documentation.dnanexus.com/developer/api/users.md): Learn about creating and managing users via the DNAnexus Platform API.
+- [Organizations](https://documentation.dnanexus.com/developer/api/organizations.md): Learn about creating and managing organizations (orgs) via the DNAnexus Platform API.
+- [Trusted Research Environments API](https://documentation.dnanexus.com/developer/api/trusted-research-environments.md): Learn about creating and managing Trusted Research Environments (TREs) via the DNAnexus Platform API.
+- [Data Access Requests](https://documentation.dnanexus.com/developer/api/trusted-research-environments/data-access-requests.md): Learn about creating and managing Data Access Requests (TRE application objects) via the DNAnexus Platform API.
+- [OIDC Clients](https://documentation.dnanexus.com/developer/api/oidc-clients.md): Learn how to use API methods related to enabling users of a third-party web application to log into that app using DNAnexus Platform login credentials.
+- [Data Containers](https://documentation.dnanexus.com/developer/api/data-containers.md)
+- [Folders and Deletion](https://documentation.dnanexus.com/developer/api/data-containers/folders-and-deletion.md)
+- [Cloning](https://documentation.dnanexus.com/developer/api/data-containers/cloning.md)
+- [Project API Methods](https://documentation.dnanexus.com/developer/api/data-containers/projects.md): Learn more about Project methods.
+- [Project Permissions and Sharing](https://documentation.dnanexus.com/developer/api/data-containers/project-permissions-and-sharing.md): Project permissions define the degree to which members can modify, create, and share project content, and whether they can change the project's members or owner.
+- [Data Object Lifecycle](https://documentation.dnanexus.com/developer/api/data-object-lifecycle.md)
+- [Types](https://documentation.dnanexus.com/developer/api/data-object-lifecycle/types.md)
+- [Object Details](https://documentation.dnanexus.com/developer/api/data-object-lifecycle/details-and-links.md)
+- [Visibility](https://documentation.dnanexus.com/developer/api/data-object-lifecycle/visibility.md)
+- [Data Object Metadata](https://documentation.dnanexus.com/developer/api/introduction-to-data-object-metadata.md): Use metadata to keep your data objects organized, as your projects grow larger and more complex.
+- [Name](https://documentation.dnanexus.com/developer/api/introduction-to-data-object-metadata/name.md)
+- [Properties](https://documentation.dnanexus.com/developer/api/introduction-to-data-object-metadata/properties.md)
+- [Tags](https://documentation.dnanexus.com/developer/api/introduction-to-data-object-metadata/tags.md)
+- [Data Object Classes](https://documentation.dnanexus.com/developer/api/introduction-to-data-object-classes.md)
+- [Records](https://documentation.dnanexus.com/developer/api/introduction-to-data-object-classes/records.md)
+- [Files](https://documentation.dnanexus.com/developer/api/introduction-to-data-object-classes/files.md)
+- [Databases](https://documentation.dnanexus.com/developer/api/introduction-to-data-object-classes/databases.md)
+- [Drives](https://documentation.dnanexus.com/developer/api/introduction-to-data-object-classes/drives.md): Learn about creating and managing virtual drives, mapped to resources on external storage services, via the DNAnexus API.
+- [DBClusters](https://documentation.dnanexus.com/developer/api/introduction-to-data-object-classes/dbclusters.md): Learn how to access DBCluster objects via the DNAnexus API.
+- [Running Analyses](https://documentation.dnanexus.com/developer/api/running-analyses.md): Learn about the API for creating and running analyses on the DNAnexus Platform.
+- [I/O and Run Specifications](https://documentation.dnanexus.com/developer/api/running-analyses/io-and-run-specifications.md)
+- [Instance Types](https://documentation.dnanexus.com/developer/api/running-analyses/instance-types.md): Learn about the full range of AWS, Azure, and OCI instance types available on the DNAnexus Platform.
+- [Job Input and Output](https://documentation.dnanexus.com/developer/api/running-analyses/job-input-and-output.md)
+- [Applets and Entry Points](https://documentation.dnanexus.com/developer/api/running-analyses/applets-and-entry-points.md)
+- [Apps](https://documentation.dnanexus.com/developer/api/running-analyses/apps.md)
+- [Workflows and Analyses](https://documentation.dnanexus.com/developer/api/running-analyses/workflows-and-analyses.md)
+- [Global Workflows](https://documentation.dnanexus.com/developer/api/running-analyses/global-workflows.md)
+- [Containers for Execution](https://documentation.dnanexus.com/developer/api/running-analyses/containers-for-execution.md)
+- [Search](https://documentation.dnanexus.com/developer/api/search.md)
+- [System Methods](https://documentation.dnanexus.com/developer/api/system-methods.md): Learn about miscellaneous system methods that are part of the DNAnexus Platform API.
+- [Omics Data Catalog](https://documentation.dnanexus.com/developer/api/omics-data-catalog.md): Learn about the Omics Data Catalog API for metadata management, search, and synchronization of structured research data.
+- [Directory of API Methods](https://documentation.dnanexus.com/developer/api/api-directory.md)
+- [DNAnexus Service Limits](https://documentation.dnanexus.com/developer/api/service-limits.md)
+- [Administrator](https://documentation.dnanexus.com/admin.md)
+- [Billing](https://documentation.dnanexus.com/admin/billing-and-account-management.md): Learn how to set up billing for your account, so you can run analyses, as well as store and egress data. Increase your account's spending limit, view past transactions, and more.
+- [Org Management](https://documentation.dnanexus.com/admin/org-management.md)
+- [Single Sign-On](https://documentation.dnanexus.com/admin/single-sign-on.md): DNAnexus supports Single Sign-On functionality using the SAML 2.0 protocol.
+- [Audit Trail](https://documentation.dnanexus.com/admin/audit-trail.md): Access complete, human- and machine-readable logs of all activities, to maintain compliance with 21 CFR Part 11 (Annex 11).
+- [Integrating with External Services](https://documentation.dnanexus.com/admin/integrating-with-external-services.md)
+- [Portal Setup](https://documentation.dnanexus.com/admin/portal-config.md): Learn about Portals and how to set up and use them for your organization.
+- [GxP](https://documentation.dnanexus.com/admin/gxp.md): Learn about the DNAnexus GxP offering and how to get and use it.
+- [Controlled Tool Access (allowed executables)](https://documentation.dnanexus.com/admin/gxp/controlled-tool-access-allowed-executables.md)
+- [Managing Trusted Research Environments](https://documentation.dnanexus.com/admin/trusted-research-environments.md): Manage Trusted Research Environments (TREs) on the DNAnexus Platform: create environments, configure data inventories, manage access review pipelines, and control the TRE lifecycle.
+- [Plan a Trusted Research Environment](https://documentation.dnanexus.com/admin/trusted-research-environments/planning-a-tre.md): Understand the prerequisites and planning decisions required before creating a Trusted Research Environment on the DNAnexus Platform.
+- [Create and Publish a Trusted Research Environment](https://documentation.dnanexus.com/admin/trusted-research-environments/creating-a-tre.md): Step-by-step guide for TRE Admins to create, configure, and publish a new Trusted Research Environment on the DNAnexus Platform.
+- [Configure TRE Admins and Authorized Users](https://documentation.dnanexus.com/admin/trusted-research-environments/configuring-tre-membership.md): Manage TRE Admins and Authorized Users for a Trusted Research Environment on the DNAnexus Platform.
+- [Configure Data Access Review Steps and Reviewers](https://documentation.dnanexus.com/admin/trusted-research-environments/configuring-review-workflow.md): Add, edit, and remove review steps and reviewers in a Trusted Research Environment access request approval pipeline on the DNAnexus Platform.
+- [Manage TRE Lifecycle States](https://documentation.dnanexus.com/admin/trusted-research-environments/managing-tre-lifecycle.md): Publish, deactivate, reactivate, and delete a Trusted Research Environment, and update its resource inventory after launch.
+- [Science Corner](https://documentation.dnanexus.com/science.md)
+- [Scientific Guides](https://documentation.dnanexus.com/science/scientific-guides.md)
+- [Somatic Small Variant and CNV Discovery Workflow Walkthrough](https://documentation.dnanexus.com/science/scientific-guides/somatic-small-variant-and-cnv-discovery-workflow-walkthrough.md): Learn how to use this workflow to detect somatic small variants and CNVs.
+- [SAIGE GWAS Walkthrough](https://documentation.dnanexus.com/science/scientific-guides/saige-gwas-walkthrough.md)
+- [LocusZoom DNAnexus App](https://documentation.dnanexus.com/science/scientific-guides/locuszoom-dnanexus-app.md): The LocusZoom DNAnexus app visualizes GWAS result files stored on the DNAnexus platform.
+- [Human Reference Genomes](https://documentation.dnanexus.com/science/scientific-guides/human-genome.md)
+- [Using Hail to Analyze Genomic Data](https://documentation.dnanexus.com/science/using-hail-to-analyze-genomic-data.md)
+- [Open-Source Tools by DNAnexus Scientists](https://documentation.dnanexus.com/science/open-source-tools.md)
+- [Using IGV Locally with DNAnexus](https://documentation.dnanexus.com/science/using-igv-with-dnanexus.md)
+- [Downloads](https://documentation.dnanexus.com/downloads.md): Download, install, and get started using the DNAnexus Platform SDK, the DNAnexus upload and download agents, and dxCompiler.
+- [FAQs](https://documentation.dnanexus.com/faqs.md)
+- [EOL Documentation](https://documentation.dnanexus.com/faqs/eol-documentation.md): End-of-life (EOL) documentation for products and tools that are no longer supported will be linked from the menu on the left.
+- [Python 3 Support and Python 2 End of Life (EOL)](https://documentation.dnanexus.com/faqs/eol-documentation/python-2-7-deprecation-and-migration-to-python-3.md)
+- [Automating Analysis Workflow](https://documentation.dnanexus.com/faqs/automating-analysis-workflows.md)
+- [Backups of Customer Data](https://documentation.dnanexus.com/faqs/backups-of-customer-data.md)
+- [Developing Apps and Applets](https://documentation.dnanexus.com/faqs/developing-apps-and-applets.md)
+- [Importing Data](https://documentation.dnanexus.com/faqs/importing-data.md)
+- [Platform Uptime](https://documentation.dnanexus.com/faqs/platform-uptime.md)
+- [Legal and Compliance](https://documentation.dnanexus.com/faqs/legal-and-compliance.md)
+- [Sharing and Collaboration](https://documentation.dnanexus.com/faqs/sharing-and-collaboration.md)
+- [2026 Release Notes](https://documentation.dnanexus.com/release-notes.md): Get details on new feature releases, improvements, and fixes across the DNAnexus Platform, related public tools, and public apps in 2026.
+- [2025](https://documentation.dnanexus.com/release-notes/2025.md): Get details on new feature releases, improvements, and fixes across the DNAnexus Platform, related public tools, and public apps in 2025.
+- [2024](https://documentation.dnanexus.com/release-notes/2024.md): Get details on new feature releases, improvements, and fixes across the DNAnexus Platform, related public tools, and public apps in 2024.
+- [2023](https://documentation.dnanexus.com/release-notes/2023.md): Get details on new feature releases, improvements, and fixes across the DNAnexus Platform, related public tools, and public apps in 2023.
+- [2022](https://documentation.dnanexus.com/release-notes/2022.md): Get details on new feature releases, improvements, and fixes across the DNAnexus Platform, related public tools, and public apps in 2022.
+- [2021](https://documentation.dnanexus.com/release-notes/2021.md): Get details on new feature releases, improvements, and fixes across the DNAnexus Platform, related public tools, and public apps in 2021.
+- [2020](https://documentation.dnanexus.com/release-notes/2020.md): Get details on new feature releases, improvements, and fixes across the DNAnexus Platform, related public tools, and public apps in 2020.
+- [2019](https://documentation.dnanexus.com/release-notes/2019.md): Get details on new feature releases, improvements, and fixes across the DNAnexus Platform, related public tools, and public apps in 2019.
+- [2018](https://documentation.dnanexus.com/release-notes/2018.md): Get details on new feature releases, improvements, and fixes across the DNAnexus Platform, related public tools, and public apps in 2018.
+- [Technical Support](https://documentation.dnanexus.com/contacting-technical-support.md): Contact the DNAnexus Support team for help in using the Platform.
+- [Legal](https://documentation.dnanexus.com/legal.md)
+
+
+---
+
+# Agent Instructions
+This documentation is published with GitBook. GitBook is the documentation platform designed so that both humans and AI agents can read, navigate, and reason over technical content effectively. Learn more at gitbook.com.
+
+## Querying This Documentation
+If you need additional information, you can query the documentation dynamically by asking a question.
+Perform an HTTP GET request on a page URL with the `ask` query parameter:
+```
+GET https://documentation.dnanexus.com/readme.md?ask=<question>
+```
+The question should be specific, self-contained, and written in natural language.
+The response will contain a direct answer to the question and relevant excerpts and sources from the documentation.
+Use this mechanism when the answer is not explicitly present in the current page, you need clarification or additional context, or you want to retrieve related documentation sections.

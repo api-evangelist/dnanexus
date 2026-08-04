@@ -1,0 +1,165 @@
+generated: '2026-08-04'
+method: searched
+source: https://documentation.dnanexus.com/developer/api/protocols
+api: DNAnexus Platform API
+base_url: https://api.dnanexus.com
+style:
+  shape: RPC over HTTP (JSON-in / JSON-out)
+  transport: HTTPS only
+  http_method: POST
+  note: >-
+    Every DNAnexus API method is an HTTP POST to a distinct route. There is no
+    resource/verb REST mapping: routes are of the form /class-xxxx/method (for
+    example /file-xxxx/describe, /project-xxxx/invite) or /system/method (for
+    example /system/findDataObjects). Roughly 206 methods are documented in the
+    Directory of API Methods.
+  route_forms:
+  - /system/<method>
+  - /<class>-xxxx/<method>
+  - /<class>/new
+  - /app-xxxx[/yyyy]/<method>
+  directory: https://documentation.dnanexus.com/developer/api/api-directory
+content_types:
+  request: application/json
+  response: application/json
+  encoding: UTF-8
+  note: >-
+    Content-Type must be absent or exactly "application/json"; anything else raises
+    a MalformedJSON error. JSON per RFC 4627.
+  docs: https://documentation.dnanexus.com/developer/api/protocols
+authentication:
+  style: bearer token
+  header: 'Authorization: Bearer <token>'
+  artifact: authentication/dnanexus-authentication.yml
+  docs: https://documentation.dnanexus.com/developer/api/authentication
+idempotency:
+  supported: true
+  mechanism: nonce
+  field: nonce
+  location: request body (JSON field)
+  max_length_bytes: 128
+  encoding: UTF-8 string
+  retention: 1 hour
+  semantics: >-
+    A nonce uniquely identifies a request. Reissuing the same request with the same
+    nonce returns an exact replica of the original response instead of creating a
+    second object - the recovery path when a response is dropped in flight. The
+    request input must be byte-for-byte unchanged; any change makes it a different
+    request and the API returns InvalidInput. Replay behaviour is guaranteed only
+    within one hour of the original request; after that the retry may create a new
+    object as if no nonce had been supplied.
+  docs: https://documentation.dnanexus.com/developer/api/nonces
+  methods:
+  - /app/new
+  - /app-xxxx/run
+  - /applet/new
+  - /applet-xxxx/run
+  - /file/new
+  - /job/new
+  - /org/new
+  - /record/new
+  - /workflow/new
+  - /workflow-xxxx/run
+pagination:
+  style: cursor
+  request_params:
+  - name: limit
+    description: Maximum number of results to return.
+  - name: starting
+    description: Cursor; set to the previous response's `next` value.
+  response_fields:
+  - name: results
+    description: The page of results.
+  - name: next
+    description: >-
+      Opaque cursor for the following page; null when the result set is exhausted.
+  applies_to: the /system/find* and /*/find* search methods
+  docs: https://documentation.dnanexus.com/developer/api/search
+search_semantics:
+  name_matching: [exact, glob, PCRE regexp]
+  glob_wildcards: ['*', '?']
+  note: >-
+    Bracket notation [] is not supported in globs; *, ? and \ must be backslash
+    escaped, and backslashes are double escaped inside JSON strings.
+  boolean_filters: '{"$and": [...]} and {"$or": [...]} composition on `type`, `tags`
+    and `properties` filters'
+  docs: https://documentation.dnanexus.com/developer/api/search
+metadata:
+  properties:
+    description: Arbitrary key/value string properties on any data object.
+    methods: [/class-xxxx/setProperties]
+    docs: https://documentation.dnanexus.com/developer/api/introduction-to-data-object-metadata/properties
+  tags:
+    description: Free-form string tags on any data object.
+    methods: [/class-xxxx/addTags, /class-xxxx/removeTags]
+    docs: https://documentation.dnanexus.com/developer/api/introduction-to-data-object-metadata/tags
+  types:
+    description: Semantic type strings attached to data objects.
+    methods: [/class-xxxx/addTypes, /class-xxxx/removeTypes]
+  details:
+    description: Arbitrary JSON blob attached to a data object, including DNAnexus
+      links to other objects.
+    methods: [/class-xxxx/getDetails, /class-xxxx/setDetails]
+versioning:
+  scheme: request header
+  header: DNAnexus-API
+  current: 1.0.0
+  default: most recent version when the header is omitted
+  echoed_in_response: true
+  release_identifier: deployment date, e.g. _20250617
+  docs: https://documentation.dnanexus.com/developer/api/protocols
+  artifact: lifecycle/dnanexus-lifecycle.yml
+error_envelope:
+  format: proprietary JSON envelope (not RFC 9457 problem+json)
+  shape:
+    error:
+      type: <ErrorType>
+      message: <human readable description>
+      details: <optional, additional context>
+  artifact: errors/dnanexus-problem-types.yml
+  docs: https://documentation.dnanexus.com/developer/api/protocols
+retries:
+  guidance: >-
+    Some responses indicate the request can be retried; any 5xx response code may be
+    retried up to some limit. The reference retry logic lives in the dx-toolkit
+    api_wrappers.
+  reference: https://github.com/dnanexus/dx-toolkit/tree/master/src/api_wrappers#http-retry-logic
+  safe_retry_pattern: pair a retry with the `nonce` field on creation/run methods
+rate_limiting:
+  documented: true
+  api_calls: 200 / second per account
+  signal: RateLimitConditional error type, HTTP 429
+  headers_documented: false
+  artifact: rate-limits/dnanexus-rate-limits.yml
+  docs: https://documentation.dnanexus.com/developer/api/service-limits
+authorization_model:
+  levels: [NONE, VIEW, UPLOAD, CONTRIBUTE, ADMINISTER]
+  scope: project / data container membership
+  docs: https://documentation.dnanexus.com/developer/api/data-containers/project-permissions-and-sharing
+  note: Permission level, not OAuth scope, is the Platform API authorization surface.
+entity_ids:
+  form: class-xxxx
+  alphabet: 0123456789BFGJKPQVXYZbfgjkpqvxyz
+  length: 24 characters after the class prefix
+  stable: true
+  note: >-
+    Users, organizations and TREs use handles instead (user-joesmith, org-umbrellacorp,
+    tre-genomics). Apps additionally resolve by app-name/version or app-name/tag.
+  docs: https://documentation.dnanexus.com/developer/api/entity-ids
+  artifact: data-model/dnanexus-data-model.yml
+regions:
+  documented: true
+  docs: https://documentation.dnanexus.com/developer/api/regions
+  note: >-
+    Objects and executions are region-bound (AWS, Azure and OCI regions); most
+    service limits are per cloud-provider-and-region combination.
+request_tracing:
+  request_id_header: not documented
+x-evidence:
+  fetched: '2026-08-04'
+  sources:
+  - https://documentation.dnanexus.com/developer/api/protocols.md
+  - https://documentation.dnanexus.com/developer/api/nonces.md
+  - https://documentation.dnanexus.com/developer/api/search.md
+  - https://documentation.dnanexus.com/developer/api/entity-ids.md
+  - https://documentation.dnanexus.com/developer/api/service-limits.md

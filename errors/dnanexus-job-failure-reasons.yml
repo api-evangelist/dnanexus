@@ -1,0 +1,76 @@
+generated: '2026-08-04'
+method: searched
+source: https://documentation.dnanexus.com/developer/apps/error-information
+docs: https://documentation.dnanexus.com/developer/apps/error-information
+scope: execution / job failures (distinct from the HTTP API error envelope)
+envelope_field: failureReason
+note: >-
+  This is the second, execution-side error registry. When a job or analysis fails,
+  the reason appears as `failureReason` in the job's describe hash (and in the
+  monitor tab in the UI), with a human-readable `failureMessage`. An executable
+  itself reports failure through the local file job_error.json, a native exception,
+  or dx-jobutil-report-error.
+failure_reasons:
+- reason: AppError
+  billed: true
+  meaning: >-
+    The app or applet recognized an expected error condition, typically incompatible
+    input data. Message comes from the executable.
+- reason: AppInsufficientResourceError
+  billed: true
+  meaning: >-
+    An AppError/AppInternalError whose message indicates an out-of-memory or
+    out-of-storage condition; the platform remaps the failureReason.
+  action: >-
+    With org policy allowInstanceUpgradeOnJobRestart=true and a retry in the
+    execution policy, the platform retries one instance-size step up within the same
+    family (e.g. mem1_ssd1_v2_x2 to mem1_ssd1_v2_x4).
+- reason: AppInternalError
+  billed: true
+  meaning: The executable hit an unexpected condition; debug information may be in
+    the job log.
+- reason: AuthError
+  billed: true
+  meaning: >-
+    The job's authentication token was revoked or expired. Job auth tokens are valid
+    for at most 30 days, and jobs in a tree inherit the root execution's expiry.
+- reason: CostLimitExceeded
+  billed: true
+  meaning: The job's accumulated charge exceeded its cost limit and it was terminated.
+- reason: SpendingLimitExceeded
+  billed: true
+  meaning: The billing account's spending limit was reached.
+- reason: OrgExpired
+  meaning: The organization has expired and can no longer perform billable operations.
+- reason: DependencyUnsatisfiable
+  meaning: A job this job depended on failed (in another job tree).
+- reason: ExecutionError
+  meaning: An error occurred while attempting to run the executable on a cloud worker.
+- reason: IncompleteUploads
+  meaning: One or more prior data uploads were interrupted and need attention.
+- reason: InputError
+  meaning: The job's inputs could not be parsed or a dependency could not be fulfilled.
+- reason: JMInternalError
+  billed: false
+  meaning: The system encountered an internal error processing the job; the user is
+    not charged.
+- reason: JobTreeFailure
+  meaning: >-
+    Another job in the same job tree failed, so all non-terminal jobs in the tree
+    take this failure reason.
+- reason: JobTimeoutExceeded
+  meaning: The configured job timeout was exceeded while executing an entry point.
+- reason: OutputError
+  meaning: The job's outputs could not be parsed or a dependency could not be fulfilled.
+- reason: SpotInstanceInterruption
+  meaning: >-
+    The spot instance running the job was reclaimed by the cloud provider; the job
+    may be retried or rescheduled depending on the execution policy.
+- reason: UnresponsiveWorker
+  meaning: The cloud worker running the job stopped responding for several minutes.
+related:
+- errors/dnanexus-problem-types.yml
+x-evidence:
+  fetched: '2026-08-04'
+  url: https://documentation.dnanexus.com/developer/apps/error-information.md
+  http_status: 200

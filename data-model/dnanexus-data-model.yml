@@ -1,0 +1,259 @@
+generated: '2026-08-04'
+method: searched
+source: https://documentation.dnanexus.com/developer/api/api-directory
+supporting_sources:
+- https://documentation.dnanexus.com/developer/api/entity-ids
+- https://documentation.dnanexus.com/getting-started/key-concepts
+- https://documentation.dnanexus.com/developer/api/data-containers
+note: >-
+  DNAnexus publishes no OpenAPI, so this entity graph was read from the published
+  Directory of API Methods (206 documented methods), the Entity IDs reference and
+  the key-concepts documentation, not derived from schema $refs.
+id_convention:
+  form: <class>-xxxx
+  alphabet: 0123456789BFGJKPQVXYZbfgjkpqvxyz
+  length: 24 characters after the class prefix
+  stability: fixed for the lifetime of the entity; unchanged when a data object is
+    cloned into another container
+  handle_classes:
+  - class: user
+    form: user-<handle>
+    example: user-joesmith
+  - class: org
+    form: org-<handle>
+    example: org-umbrellacorp
+  - class: tre
+    form: tre-<handle>
+    example: tre-genomics
+  app_aliasing:
+  - app-<id>
+  - app-<name>
+  - app-<name>/<version>
+  - app-<name>/<tag>
+entities:
+- name: project
+  id_prefix: project-
+  kind: data container
+  domain: data
+  methods: 16
+  key_methods: [/project/new, /project-xxxx/describe, /project-xxxx/invite, /project-xxxx/transfer,
+    /project-xxxx/archive, /project-xxxx/destroy]
+  docs: https://documentation.dnanexus.com/developer/api/data-containers/projects
+- name: container
+  id_prefix: container-
+  kind: data container
+  domain: execution
+  methods: 1
+  key_methods: [/container-xxxx/describe]
+  note: Transient container created for each execution.
+- name: file
+  id_prefix: file-
+  kind: data object
+  domain: data
+  methods: 5
+  key_methods: [/file/new, /file-xxxx/upload, /file-xxxx/close, /file-xxxx/download,
+    /file-xxxx/describe]
+- name: record
+  id_prefix: record-
+  kind: data object
+  domain: data
+  methods: 2
+  key_methods: [/record/new, /record-xxxx/describe]
+- name: database
+  id_prefix: database-
+  kind: data object
+  domain: data
+  methods: 2
+  key_methods: [/database-xxxx/describe, /database-xxxx/relocate]
+- name: dbcluster
+  id_prefix: dbcluster-
+  kind: data object
+  domain: data
+  methods: 5
+  key_methods: [/dbcluster/new, /dbcluster-xxxx/start, /dbcluster-xxxx/stop, /dbcluster-xxxx/terminate]
+- name: drive
+  id_prefix: drive-
+  kind: data object
+  domain: data
+  methods: 4
+  key_methods: [/drive/new, /drive-xxxx/describe, /drive-xxxx/update, /drive-xxxx/disable]
+  note: Virtual drive mapped to an external storage service.
+- name: applet
+  id_prefix: applet-
+  kind: executable (project-scoped)
+  domain: execution
+  methods: 5
+  key_methods: [/applet/new, /applet-xxxx/run, /applet-xxxx/describe, /applet-xxxx/validateBatch]
+- name: app
+  id_prefix: app-
+  kind: executable (global, versioned)
+  domain: execution
+  methods: 21
+  key_methods: [/app/new, /app-xxxx/run, /app-xxxx/publish, /app-xxxx/install, /app-xxxx/addAuthorizedUsers]
+- name: workflow
+  id_prefix: workflow-
+  kind: executable (project-scoped)
+  domain: execution
+  methods: 12
+  key_methods: [/workflow/new, /workflow-xxxx/addStage, /workflow-xxxx/run, /workflow-xxxx/dryRun]
+- name: globalworkflow
+  id_prefix: globalworkflow-
+  kind: executable (global, versioned)
+  domain: execution
+  methods: 16
+  key_methods: [/globalworkflow/new, /globalworkflow-xxxx/run, /globalworkflow-xxxx/publish]
+- name: job
+  id_prefix: job-
+  kind: execution
+  domain: execution
+  methods: 8
+  key_methods: [/job/new, /job-xxxx/describe, /job-xxxx/terminate, /job-xxxx/getIdentityToken]
+- name: analysis
+  id_prefix: analysis-
+  kind: execution
+  domain: execution
+  methods: 6
+  key_methods: [/analysis-xxxx/describe, /analysis-xxxx/terminate, /analysis-xxxx/update]
+  note: An analysis is the execution of a workflow; its stages are jobs.
+- name: user
+  id_prefix: user-
+  kind: principal
+  domain: identity
+  methods: 2
+  key_methods: [/user-xxxx/describe, /user-xxxx/update]
+- name: org
+  id_prefix: org-
+  kind: principal
+  domain: identity
+  methods: 11
+  key_methods: [/org/new, /org-xxxx/describe, /org-xxxx/invite, /org-xxxx/findMembers,
+    /org-xxxx/findProjects]
+- name: oidcClient
+  id_prefix: oidcClient-
+  kind: identity configuration
+  domain: identity
+  methods: 2
+  key_methods: [/oidcClient-xxxx/describe, /oidcClient-xxxx/resetClientSecret]
+- name: dataCatalog
+  id_prefix: dataCatalog-
+  kind: metadata catalog
+  domain: omics data catalog
+  methods: 15
+  key_methods: [/dataCatalog-xxxx/findRecords, /dataCatalog-xxxx/upsertRecords, /dataCatalog-xxxx/syncProject,
+    /dataCatalog-xxxx/getSchema]
+- name: tre
+  id_prefix: tre-
+  kind: trusted research environment
+  domain: tre
+  methods: 18
+  key_methods: [/tre/new, /tre-xxxx/activate, /tre-xxxx/setPolicies, /tre-xxxx/setInventory,
+    /tre-xxxx/addApplicationReviewers]
+- name: treApplication
+  id_prefix: treApplication-
+  kind: data access request
+  domain: tre
+  methods: 13
+  key_methods: [/treApplication/new, /treApplication-xxxx/submit, /treApplication-xxxx/approve,
+    /treApplication-xxxx/reject]
+relationships:
+- from: project
+  to: file
+  kind: has_many
+  via: containment
+  note: Data objects live in one or more data containers; cloning keeps the same object
+    ID.
+- from: project
+  to: record
+  kind: has_many
+  via: containment
+- from: project
+  to: applet
+  kind: has_many
+  via: containment
+- from: project
+  to: workflow
+  kind: has_many
+  via: containment
+- from: project
+  to: database
+  kind: has_many
+  via: containment
+- from: project
+  to: user
+  kind: has_many
+  via: permission grant (VIEW / UPLOAD / CONTRIBUTE / ADMINISTER)
+- from: project
+  to: org
+  kind: belongs_to
+  via: billTo
+- from: org
+  to: user
+  kind: has_many
+  via: membership (/org-xxxx/findMembers, /org-xxxx/invite)
+- from: applet
+  to: job
+  kind: has_many
+  via: /applet-xxxx/run
+- from: app
+  to: job
+  kind: has_many
+  via: /app-xxxx/run
+- from: workflow
+  to: analysis
+  kind: has_many
+  via: /workflow-xxxx/run
+- from: analysis
+  to: job
+  kind: has_many
+  via: stage executions
+- from: job
+  to: job
+  kind: has_many
+  via: subjobs / job tree (root_execution_id)
+- from: job
+  to: container
+  kind: has_one
+  via: execution container
+- from: job
+  to: file
+  kind: has_many
+  via: inputs and outputs (DNAnexus links)
+- from: workflow
+  to: applet
+  kind: has_many
+  via: stages (/workflow-xxxx/addStage, updateStageExecutable)
+- from: dataCatalog
+  to: project
+  kind: has_many
+  via: /dataCatalog-xxxx/syncProject
+- from: tre
+  to: treApplication
+  kind: has_many
+  via: data access requests
+- from: treApplication
+  to: user
+  kind: has_many
+  via: collaborators (/treApplication-xxxx/addCollaborators)
+- from: oidcClient
+  to: org
+  kind: belongs_to
+  via: owning organization
+- from: file
+  to: record
+  kind: has_many
+  via: DNAnexus links in object details
+shared_metadata:
+  applies_to: all data objects (class-xxxx)
+  facets: [name, properties, tags, types, details, visibility, state]
+  states: [open, closing, closed]
+  methods: [/class-xxxx/rename, /class-xxxx/setProperties, /class-xxxx/addTags, /class-xxxx/addTypes,
+    /class-xxxx/setDetails, /class-xxxx/setVisibility, /class-xxxx/close, /class-xxxx/clone,
+    /class-xxxx/move]
+method_totals:
+  documented_methods: 206
+  system_methods: 22
+  source: https://documentation.dnanexus.com/developer/api/api-directory
+x-evidence:
+  fetched: '2026-08-04'
+  url: https://documentation.dnanexus.com/developer/api/api-directory.md
+  http_status: 200

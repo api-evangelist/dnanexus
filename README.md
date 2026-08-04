@@ -42,5 +42,21 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-DNAnexus is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://forgeglobal.com/dnanexus_stock/
+DNAnexus operates a cloud-based precision health data platform for genomic and multi-omic
+research, clinical testing and biopharma R&D. The DNAnexus Platform exposes a documented
+HTTP API of roughly 206 JSON-over-HTTPS methods at `api.dnanexus.com`, plus two OpenID
+Connect issuers and a first-party SDK/CLI toolchain.
+
+- Website — https://www.dnanexus.com/
+- Documentation — https://documentation.dnanexus.com/
+- API reference (Directory of API Methods) — https://documentation.dnanexus.com/developer/api/api-directory
+- GitHub — https://github.com/dnanexus
+- Status — https://status.dnanexus.com/
+- Trust center — https://trust.dnanexus.com
+
+**No OpenAPI.** DNAnexus publishes no OpenAPI, Swagger, AsyncAPI or GraphQL contract.
+`/openapi.json`, `/openapi.yaml`, `/swagger.json`, `/v1/openapi.json`, `/api-docs`, `/docs`
+and `/redoc` were probed on `api.dnanexus.com`, `documentation.dnanexus.com` and
+`www.dnanexus.com` and all returned 404. `platform.dnanexus.com` answers HTTP 200 for every
+path but serves the single-page-app HTML shell, not a spec. The API contract is published as
+human documentation only.

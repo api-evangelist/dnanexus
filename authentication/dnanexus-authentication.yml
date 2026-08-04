@@ -1,0 +1,101 @@
+generated: '2026-08-04'
+method: searched
+source: https://documentation.dnanexus.com/developer/api/authentication
+docs: https://documentation.dnanexus.com/developer/api/authentication
+note: >-
+  DNAnexus publishes no OpenAPI/Swagger definition, so this profile was read from
+  the provider's own API documentation and from the live OIDC discovery documents
+  rather than derived from securitySchemes.
+summary:
+  types: [http, openIdConnect]
+  http_schemes: [bearer]
+  oauth2_flows: [authorizationCode]
+  api_key_in: []
+schemes:
+- name: PlatformBearerToken
+  type: http
+  scheme: bearer
+  in: header
+  header: Authorization
+  format: 'Authorization: Bearer <token>'
+  applies_to: https://api.dnanexus.com (all ~206 Platform API methods)
+  source: https://documentation.dnanexus.com/developer/api/authentication
+  token_kinds:
+  - kind: interactive-login token
+    description: Issued when a user logs in through the UI or `dx login`.
+  - kind: API token
+    description: >-
+      Created and revoked by the user in the platform web interface under
+      username dropdown > Profile > API Tokens. This is the token developers use
+      for scripted/programmatic access.
+    management_url: https://platform.dnanexus.com/
+  - kind: job token
+    description: >-
+      Automatically supplied to jobs in the Execution Environment; derived from
+      the launching user's login or API token. Job authentication tokens are valid
+      for at most 30 days, and a job in a job tree inherits the root execution's
+      token expiration.
+    source: https://documentation.dnanexus.com/developer/apps/error-information
+  errors:
+  - type: InvalidAuthentication
+    http_status: 401
+    message: You need to be logged in to use this method
+    observed: '2026-08-04 POST https://api.dnanexus.com/system/whoami with empty body'
+  - type: PermissionDenied
+    http_status: 401
+- name: DNAnexusOIDC
+  type: openIdConnect
+  openIdConnectUrl: https://oidc.dnanexus.com/.well-known/openid-configuration
+  issuer: https://oidc.dnanexus.com
+  purpose: >-
+    Lets a third-party web application sign users in with their DNAnexus Platform
+    credentials. OIDC clients are registered through the Platform API oidcClient
+    methods (/oidcClient-xxxx/*).
+  docs: https://documentation.dnanexus.com/developer/api/oidc-clients
+  example_app: https://github.com/dnanexus/oidc-example-app
+  authorization_endpoint: https://oidc.dnanexus.com/authorize
+  jwks_uri: https://oidc.dnanexus.com/jwks
+  grant_types_supported: [authorization_code]
+  response_types_supported: [code]
+  response_modes_supported: [form_post, fragment, query]
+  code_challenge_methods_supported: [S256]
+  token_endpoint_auth_methods_supported: [client_secret_basic]
+  subject_types_supported: [pairwise]
+  scopes_supported: [openid, name, email, user_id]
+  claims_supported: [sub, name, email, user_id, sid, auth_time, iss]
+  file: well-known/dnanexus-oidc-openid-configuration.json
+- name: DNAnexusJobIdentityToken
+  type: openIdConnect
+  openIdConnectUrl: https://job-oidc.dnanexus.com/.well-known/openid-configuration
+  issuer: https://job-oidc.dnanexus.com
+  purpose: >-
+    Workload identity federation: a running DNAnexus job requests an OIDC ID token
+    (via /job-xxxx/getIdentityToken or dx-jobutil-get-identity-token) and exchanges
+    it with AWS/Azure/GCP or another third-party service, so apps do not carry long
+    lived cloud credentials.
+  docs: https://documentation.dnanexus.com/developer/apps/job-identity-tokens-for-access-to-clouds-and-third-party-services
+  jwks_uri: https://job-oidc.dnanexus.com/.well-known/jwks
+  response_types_supported: [id_token]
+  id_token_signing_alg_values_supported: [RS256]
+  subject_types_supported: [public, pairwise]
+  scopes_supported: [openid]
+  claims_supported: [sub, aud, exp, iat, iss, jti, nbf, job_id, root_execution_id,
+    root_executable_id, root_executable_name, root_executable_version, executable_id,
+    app_name, app_version, project_id, bill_to, launched_by, region, job_worker_ipv4,
+    job_worker_ipv6, job_try]
+  file: well-known/dnanexus-job-oidc-openid-configuration.json
+mfa:
+  supported: true
+  docs: https://documentation.dnanexus.com/user/login-and-logout
+  note: Two-factor authentication is documented on the login/logout page.
+x-evidence:
+  fetched: '2026-08-04'
+  probes:
+  - url: https://oidc.dnanexus.com/.well-known/openid-configuration
+    http_status: 200
+  - url: https://job-oidc.dnanexus.com/.well-known/openid-configuration
+    http_status: 200
+  - url: https://auth.dnanexus.com/.well-known/openid-configuration
+    http_status: 404
+  - url: https://api.dnanexus.com/system/whoami
+    http_status: 401
