@@ -103,7 +103,7 @@ apis:
   tags:
   - Authentication
   - OpenID Connect
-  - Single Sign-On
+  - SSO
   - Identity
   tags_raw:
   - Authentication
