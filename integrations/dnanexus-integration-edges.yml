@@ -1,0 +1,21 @@
+generated: '2026-10-13'
+method: searched
+checked:
+- https://aws.amazon.com/marketplace/
+marketplace_apps: []
+edges:
+- partner_name: AWS Marketplace
+  partner: amazon-web-services
+  partner_match: aggregator
+  type: marketplace
+  marketplace: aws-marketplace
+  channel: distribution
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://aws.amazon.com/marketplace/seller-profile?id=419e06bf-d35c-4fe4-9ecd-591db8bb9111
+  listing_count: 1
+  apps:
+  - DNAnexus Platform
+  seller_name: DNAnexus
+  detected_by: sweep-cloud-marketplaces.py
+  detected: '2026-10-13'
