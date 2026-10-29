@@ -64,21 +64,114 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-DNAnexus operates a cloud-based precision health data platform for genomic and multi-omic
-research, clinical testing and biopharma R&D. The DNAnexus Platform exposes a documented
-HTTP API of roughly 206 JSON-over-HTTPS methods at `api.dnanexus.com`, plus two OpenID
-Connect issuers and a first-party SDK/CLI toolchain.
+DNAnexus operates a cloud-based precision health data platform for genomic and multi-omic research, clinical testing and biopharma R&D. The DNAnexus Platform exposes a documented HTTP API of roughly 206 JSON-over-HTTPS methods at api.dnanexus.com covering projects and data containers, files and other data objects, apps, applets, workflows and analyses, jobs and execution containers, organizations and users, the Omics Data Catalog, and Trusted Research Environments (TREs) with data access requests. Every call is an HTTP POST with a JSON body, authenticated with a bearer token, versioned through an optional DNAnexus-API header, and made idempotent through a documented nonce field on object- and job-creation methods. First-party client libraries ship for Python (dxpy), Java, Scala and C++, alongside the dx command-line client, dxfuse and dxda, and the platform is an OpenID Connect provider for third-party sign-in and for job identity tokens.
 
-- Website — https://www.dnanexus.com/
-- Documentation — https://documentation.dnanexus.com/
-- API reference (Directory of API Methods) — https://documentation.dnanexus.com/developer/api/api-directory
-- GitHub — https://github.com/dnanexus
-- Status — https://status.dnanexus.com/
-- Trust center — https://trust.dnanexus.com
+**Areas:** Company · Genomics · Bioinformatics · Life Sciences · Healthcare · Cloud Computing · Data Platform · Scientific Computing · Precision Medicine · Clinical Research
 
-**No OpenAPI.** DNAnexus publishes no OpenAPI, Swagger, AsyncAPI or GraphQL contract.
-`/openapi.json`, `/openapi.yaml`, `/swagger.json`, `/v1/openapi.json`, `/api-docs`, `/docs`
-and `/redoc` were probed on `api.dnanexus.com`, `documentation.dnanexus.com` and
-`www.dnanexus.com` and all returned 404. `platform.dnanexus.com` answers HTTP 200 for every
-path but serves the single-page-app HTML shell, not a spec. The API contract is published as
-human documentation only.
+## DNAnexus on APIs.io
+
+Everything profiled for DNAnexus is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/dnanexus/](https://apis.io/providers/dnanexus/)** — or go straight to one of the APIs or properties below.
+
+### APIs (2)
+
+- [DNAnexus Platform API](https://apis.io/apis/dnanexus/dnanexus-platform-api/) — The DNAnexus Platform API is a JSON-over-HTTPS API of roughly 206 documented methods. Each method is invoked with an HTTP POST to a route of the form…
+- [DNAnexus OpenID Connect Provider](https://apis.io/apis/dnanexus/dnanexus-openid-connect-provider/) — DNAnexus operates an OpenID Connect provider that lets third-party web applications sign users in with their DNAnexus Platform credentials. The provider…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### Security (4)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Dnanexus Authentication](https://apis.io/security/dnanexus/dnanexus-authentication/)
+- [Dnanexus Domain Security](https://apis.io/security/dnanexus/dnanexus-domain-security/)
+- [Dnanexus Trust Center](https://apis.io/security/dnanexus/dnanexus-trust-center/)
+- [Dnanexus Vulnerability Disclosure](https://apis.io/security/dnanexus/dnanexus-vulnerability-disclosure/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Dnanexus Scopes](https://apis.io/scopes/dnanexus/dnanexus-scopes/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Dnanexus Rate Limits](https://apis.io/rate-limits/dnanexus/dnanexus-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.dnanexus.com/)
+- [Documentation](https://documentation.dnanexus.com/)
+- [Getting started](https://documentation.dnanexus.com/getting-started)
+- [API reference](https://documentation.dnanexus.com/developer/api/api-directory)
+- [Pricing](https://academy.dnanexus.com/billing-access-and-orgs/billing_and_pricing)
+- [Sign up](https://platform.dnanexus.com/register)
+- [Support](https://community.dnanexus.com/s/)
+- [Blog](https://blog.dnanexus.com/)
+- [Security](https://trust.dnanexus.com)
+- [Compliance](https://www.dnanexus.com/platform-security-compliance)
+- [Terms of service](https://www.dnanexus.com/terms)
+- [Privacy policy](https://www.dnanexus.com/privacy)
+- [GitHub](https://github.com/dnanexus)
+- [Status](https://status.dnanexus.com/)
+
+## API Evangelist rating
+
+**Kin Score 48.8** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 0.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 65.8 |
+| Developer ergonomics | 78.0 |
+| Access clarity | 53.9 |
+
+**Agent readiness 20.3** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | served (partial credit) |
+| Idempotency | documented (partial credit) |
+| Error Semantics | documented (partial credit) |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | served (partial credit) |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | na |
+
+**Regulatory alignment 41.4** — Health
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/dnanexus/](https://apis.io/providers/dnanexus/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for DNAnexus: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/dnanexus/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
